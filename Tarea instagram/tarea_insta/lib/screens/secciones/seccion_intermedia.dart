@@ -7,7 +7,6 @@ class SeccionIntermedia extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(2.0),
-      color: Colors.greenAccent,
       child: Column(
         children: [
           Row(
@@ -31,11 +30,15 @@ class SeccionIntermedia extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              _imagenRedondeada("assets/images/gato1.jpg", "Gatete"),
-              _imagenRedondeada("assets/images/gato1.jpg", "Gatico"),
-              _imagenRedondeada("assets/images/gato1.jpg", "Gato"),
-              _imagenRedondeada("assets/images/gato1.jpg", "Gato"),
-              _imagenRedondeada("assets/images/gato1.jpg", "Gato")
+              _imagenRedondeada("assets/images/add.png", "Gatite"),
+              const SizedBox(width: 20),
+              _imagenRedondeada("assets/images/01.jpg", "Gatico"),
+              const SizedBox(width: 20),
+              _imagenRedondeada("assets/images/02.jpg", "Gato"),
+              const SizedBox(width: 20),
+              _imagenRedondeada("assets/images/03.jpg", "Gato"),
+              const SizedBox(width: 20),
+              _imagenRedondeada("assets/images/04.jpg", "Gato")
             ],
           ),
         ],
