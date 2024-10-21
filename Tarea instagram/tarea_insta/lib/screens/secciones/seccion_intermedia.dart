@@ -29,8 +29,7 @@ class SeccionIntermedia extends StatelessWidget {
             height: 5,
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            // mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _imagenRedondeada("assets/images/gato1.jpg", "Gato"),
               _imagenRedondeada("assets/images/gato1.jpg", "Gato"),

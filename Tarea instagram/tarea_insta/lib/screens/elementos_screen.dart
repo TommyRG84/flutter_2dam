@@ -17,7 +17,6 @@ class BodyApp extends StatelessWidget {
           ),
           SizedBox(height: 16), // Separador entre filas
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [SeccionIntermedia()],
           ),
           SizedBox(height: 16), // Separador entre filas
