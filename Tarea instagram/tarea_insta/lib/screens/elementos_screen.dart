@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tarea_insta/screens/secciones/seccion_inferior.dart';
-import 'package:tarea_insta/screens/secciones/seccion_intermedia.dart';
-import 'package:tarea_insta/screens/secciones/seccion_superior.dart';
+
+import 'secciones/seccion_inferior.dart';
+import 'secciones/seccion_intermedia.dart';
+import 'secciones/seccion_superior.dart';
 
 class BodyApp extends StatelessWidget {
   const BodyApp({super.key});
