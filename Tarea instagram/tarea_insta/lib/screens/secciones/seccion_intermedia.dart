@@ -29,13 +29,13 @@ class SeccionIntermedia extends StatelessWidget {
           ),
           Row(
             children: [
-              _imagenRedondeada("assets/images/add.png", "Gatite"),
+              _imagenRedondeada("assets/images/add.png", "Gatito"),
               const SizedBox(width: 20),
               _imagenRedondeada("assets/images/01.jpg", "Gatico"),
               const SizedBox(width: 20),
-              _imagenRedondeada("assets/images/02.jpg", "Gato"),
+              _imagenRedondeada("assets/images/02.jpg", "Gatete"),
               const SizedBox(width: 20),
-              _imagenRedondeada("assets/images/03.jpg", "Gato"),
+              _imagenRedondeada("assets/images/03.jpg", "Gatillo"),
               const SizedBox(width: 20),
               _imagenRedondeada("assets/images/04.jpg", "Gato")
             ],
