@@ -6,13 +6,13 @@ class SeccionIntermedia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(2.0),
+      padding: const EdgeInsets.all(2.0),
       child: Column(
         children: [
           Row(
             children: [
               SizedBox(
-                width: 375,
+                width: 395,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -28,7 +28,6 @@ class SeccionIntermedia extends StatelessWidget {
             height: 5,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               _imagenRedondeada("assets/images/add.png", "Gatite"),
               const SizedBox(width: 20),

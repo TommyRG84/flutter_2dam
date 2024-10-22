@@ -5,13 +5,51 @@ class SeccionInferior extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      color: Colors.redAccent,
-      child: const Text(
-        'Sección Inferior',
-        style: TextStyle(fontSize: 24, color: Colors.white),
+    return Center(
+      child: Column(
+        children: [
+          const Row(
+            children: [
+              Icon(Icons.grid_on),
+              SizedBox(
+                width: 150,
+              ),
+              Icon(Icons.assignment_ind),
+            ],
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          SizedBox(
+            width: 410,
+            height: 238,
+            child: GridView.count(
+              primary: false,
+              crossAxisSpacing: 1,
+              mainAxisSpacing: 1,
+              crossAxisCount: 3,
+              children: [
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/12.jpg"),
+              ],
+            ),
+          )
+        ],
       ),
+    );
+  }
+
+  Container contenedorImagen(String imagePath) {
+    return Container(
+      color: Colors.teal[600],
+      child: Image.asset(imagePath),
     );
   }
 }
