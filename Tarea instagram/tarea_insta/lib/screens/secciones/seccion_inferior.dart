@@ -29,14 +29,14 @@ class SeccionInferior extends StatelessWidget {
               mainAxisSpacing: 1,
               crossAxisCount: 3,
               children: [
-                contenedorImagen("assets/images/12.jpg"),
-                contenedorImagen("assets/images/12.jpg"),
-                contenedorImagen("assets/images/12.jpg"),
-                contenedorImagen("assets/images/12.jpg"),
-                contenedorImagen("assets/images/12.jpg"),
-                contenedorImagen("assets/images/12.jpg"),
-                contenedorImagen("assets/images/12.jpg"),
-                contenedorImagen("assets/images/12.jpg"),
+                contenedorImagen("assets/images/04.jpg"),
+                contenedorImagen("assets/images/05.jpg"),
+                contenedorImagen("assets/images/06.jpg"),
+                contenedorImagen("assets/images/07.jpeg"),
+                contenedorImagen("assets/images/08.jpg"),
+                contenedorImagen("assets/images/09.jpeg"),
+                contenedorImagen("assets/images/10.jpg"),
+                contenedorImagen("assets/images/11.jpg"),
                 contenedorImagen("assets/images/12.jpg"),
               ],
             ),
@@ -49,7 +49,10 @@ class SeccionInferior extends StatelessWidget {
   Container contenedorImagen(String imagePath) {
     return Container(
       color: Colors.teal[600],
-      child: Image.asset(imagePath),
+      child: Image.asset(
+        imagePath,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }
