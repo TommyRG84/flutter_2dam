@@ -1,12 +1,12 @@
-import 'package:ejercicio_1/screens/seccion_3.dart';
-import 'package:ejercicio_1/screens/seccion_4.dart';
-import 'package:ejercicio_1/screens/seccion_5.dart';
-import 'package:ejercicio_1/screens/seccion_6.dart';
-import 'package:ejercicio_1/screens/seccion_7.dart';
-import 'package:ejercicio_1/screens/seccion_8.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_3/seccion_3.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_4/seccion_4.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_5/seccion_5.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_6/seccion_6.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_7/seccion_7.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8.dart';
 import 'package:flutter/material.dart';
-import 'seccion_1.dart';
-import 'seccion_2.dart';
+import '../secciones/seccion_1/seccion_1.dart';
+import '../secciones/seccion_2/seccion_2.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({super.key});

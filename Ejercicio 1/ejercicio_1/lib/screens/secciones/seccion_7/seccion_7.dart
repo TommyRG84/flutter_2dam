@@ -1,4 +1,4 @@
-import 'package:ejercicio_1/screens/menu_lateral.dart';
+import 'package:ejercicio_1/screens/drawer/menu_lateral.dart';
 import 'package:flutter/material.dart';
 
 class Seccion7 extends StatelessWidget {

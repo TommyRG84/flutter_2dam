@@ -1,7 +1,7 @@
-import 'package:ejercicio_1/screens/seccion_8_elementos/menu_inferior.dart';
-import 'package:ejercicio_1/screens/seccion_8_elementos/seccion_inferior.dart';
-import 'package:ejercicio_1/screens/seccion_8_elementos/seccion_intermedia.dart';
-import 'package:ejercicio_1/screens/seccion_8_elementos/seccion_superior.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/menu_inferior.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/seccion_inferior.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/seccion_intermedia.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/seccion_superior.dart';
 import 'package:flutter/material.dart';
 
 class BodyApp extends StatelessWidget {
