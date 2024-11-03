@@ -4,6 +4,7 @@ import 'package:ejercicio_1/screens/secciones/seccion_5/seccion_5.dart';
 import 'package:ejercicio_1/screens/secciones/seccion_6/seccion_6.dart';
 import 'package:ejercicio_1/screens/secciones/seccion_7/seccion_7.dart';
 import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_9/seccion_9.dart';
 import 'package:flutter/material.dart';
 import '../secciones/seccion_1/seccion_1.dart';
 import '../secciones/seccion_2/seccion_2.dart';
@@ -84,6 +85,14 @@ class MenuLateral extends StatelessWidget {
               Navigator.of(context).pop();
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext context) => const Seccion8()));
+            },
+          ),
+          ListTile(
+            title: const Text("Sección 9"),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) => const Seccion9()));
             },
           ),
         ],
