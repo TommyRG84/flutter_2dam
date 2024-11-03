@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Ejercicio 01',
+      title: 'Relación de ejercicios',
       theme: ThemeData(useMaterial3: true, colorSchemeSeed: const Color.fromARGB(255, 30, 88, 136)),
       home: const PantallaBienvenida(),
     );
