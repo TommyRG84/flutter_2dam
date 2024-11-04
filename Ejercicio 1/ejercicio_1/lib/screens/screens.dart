@@ -1,0 +1,9 @@
+export 'package:ejercicio_1/screens/home_screen/home_screen.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_1/seccion_1.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_2/seccion_2.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_3/seccion_3.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_4/seccion_4.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_5/seccion_5.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_6/seccion_6.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_7/seccion_7.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8.dart';
