@@ -21,8 +21,8 @@ class SeccionInferior extends StatelessWidget {
             height: 5,
           ),
           SizedBox(
-            width: 410,
-            height: 238,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.4,
             child: GridView.count(
               primary: false,
               crossAxisSpacing: 1,

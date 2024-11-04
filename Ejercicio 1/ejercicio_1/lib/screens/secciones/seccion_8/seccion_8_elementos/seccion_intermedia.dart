@@ -24,21 +24,26 @@ class SeccionIntermedia extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 5,
-          ),
-          Row(
-            children: [
-              _imagenRedondeada("assets/images/add.png", "Gatito"),
-              const SizedBox(width: 20),
-              _imagenRedondeada("assets/images/01.jpg", "Gatico"),
-              const SizedBox(width: 20),
-              _imagenRedondeada("assets/images/02.jpg", "Gatete"),
-              const SizedBox(width: 20),
-              _imagenRedondeada("assets/images/03.jpg", "Gatillo"),
-              const SizedBox(width: 20),
-              _imagenRedondeada("assets/images/04.jpg", "Gato")
-            ],
+          const SizedBox(height: 10),
+          SizedBox(
+            height: 100,
+            width: MediaQuery.of(context).size.width * 0.8,
+            child: Center(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  _imagenRedondeada("assets/images/add.png", "Añadir"),
+                  const SizedBox(width: 12),
+                  _imagenRedondeada("assets/images/01.jpg", "Gatico"),
+                  const SizedBox(width: 12),
+                  _imagenRedondeada("assets/images/02.jpg", "Gatete"),
+                  const SizedBox(width: 12),
+                  _imagenRedondeada("assets/images/03.jpg", "Gatillo"),
+                  const SizedBox(width: 12),
+                  _imagenRedondeada("assets/images/04.jpg", "Gato"),
+                ],
+              ),
+            ),
           ),
         ],
       ),
