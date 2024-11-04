@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           '/seccion6': (context) => const Seccion6(),
           '/seccion7': (context) => const Seccion7(),
           '/seccion8': (context) => const Seccion8(),
+          '/seccion9': (context) => const Seccion9(),
         });
   }
 }

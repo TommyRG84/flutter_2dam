@@ -6,44 +6,38 @@ class Seccion9 extends StatefulWidget {
   const Seccion9({super.key});
 
   @override
-  _RandomImageAppState createState() => _RandomImageAppState();
+  // ignore: library_private_types_in_public_api
+  _RandomColors createState() => _RandomColors();
 }
 
-class _RandomImageAppState extends State<Seccion9> {
+class _RandomColors extends State<Seccion9> {
   int points = 0;
-  double posX = 0;
-  double posY = 0;
-  late Timer _timer;
+  late String randomName;
+  late Color randomColor;
+  var colorNames = ['azul', 'verde', 'naranja', 'rosa', 'rojo', 'amarillo'];
+  var colorHex = [
+    const Color(0xFF0000FF),
+    const Color(0xFF00FF00),
+    const Color(0xFFFF914D),
+    const Color(0xFFFF66C4),
+    const Color(0xFFFF0000),
+    const Color(0xFFFBC512)
+  ];
 
   @override
   void initState() {
     super.initState();
-    startTimer();
-    moveImageRandomly();
+    getRandomColor();
+    getRandomName();
+    timer();
   }
 
-  void startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      // Si no se tocó la imagen a tiempo, restamos puntos
-      setState(() {
-        points -= 2;
-      });
-      // Cambiamos la posición de la imagen
-      moveImageRandomly();
+  void timer() {
+    Timer.periodic(const Duration(milliseconds: 1500), (timer) {
+      getRandomColor();
+      getRandomName();
+      setState(() {});
     });
-  }
-
-  void moveImageRandomly() {
-    setState(() {
-      posX = Random().nextDouble() * 300;
-      posY = Random().nextDouble() * 500;
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
   }
 
   @override
@@ -52,31 +46,31 @@ class _RandomImageAppState extends State<Seccion9> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: Stack(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Positioned(
-              top: 40,
-              left: 20,
-              child: Text(
-                'Puntos: $points',
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-              ),
+            Text(
+              'Puntos: $points',
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
-            Positioned(
-              left: posX,
-              top: posY,
+            Center(
               child: GestureDetector(
                 onTap: () {
-                  // Al tocar la imagen se suman puntos y se mueve
-                  setState(() {
-                    points++;
-                  });
-                  moveImageRandomly();
+                  onGiftTap(randomName, randomColor);
                 },
-                child: Image.asset(
-                  'assets/imagen.png', // Asegúrate de tener una imagen en assets
-                  width: 80,
-                  height: 80,
+                child: Column(
+                  children: [
+                    Container(
+                      width: 120,
+                      color: randomColor,
+                      height: 120,
+                    ),
+                    Text(
+                      randomName,
+                      style:
+                          TextStyle(color: randomColor, fontSize: 40, fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -84,5 +78,43 @@ class _RandomImageAppState extends State<Seccion9> {
         ),
       ),
     );
+  }
+
+  void getRandomColor() {
+    Random random = Random();
+    int randomNumber = random.nextInt(5);
+    randomColor = colorHex[randomNumber];
+  }
+
+  void getRandomName() {
+    Random random = Random();
+    int randomNumber = random.nextInt(5);
+    randomName = colorNames[randomNumber];
+  }
+
+  String hexToStringConverter(Color hexColor) {
+    if (hexColor == const Color(0xFF0000FF)) {
+      return 'azul';
+    } else if (hexColor == const Color(0xFF00FF00)) {
+      return 'verde';
+    } else if (hexColor == const Color(0xFFFF914D)) {
+      return 'naranja';
+    } else if (hexColor == const Color(0xFFFF66C4)) {
+      return 'rosa';
+    } else if (hexColor == const Color(0xFFFF0000)) {
+      return 'rojo';
+    } else {
+      return 'amarillo';
+    }
+  }
+
+  void onGiftTap(String name, Color color) {
+    var colorToString = hexToStringConverter(color);
+    if (name == colorToString) {
+      points++;
+    } else {
+      points--;
+    }
+    setState(() {});
   }
 }
