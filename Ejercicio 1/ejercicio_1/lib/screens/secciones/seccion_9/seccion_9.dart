@@ -1,3 +1,4 @@
+import 'package:ejercicio_1/screens/drawer/menu_lateral.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
@@ -6,115 +7,97 @@ class Seccion9 extends StatefulWidget {
   const Seccion9({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _RandomColors createState() => _RandomColors();
+  JuegoImagenAleatoria createState() => JuegoImagenAleatoria();
 }
 
-class _RandomColors extends State<Seccion9> {
+class JuegoImagenAleatoria extends State<Seccion9> {
   int points = 0;
-  late String randomName;
-  late Color randomColor;
-  var colorNames = ['azul', 'verde', 'naranja', 'rosa', 'rojo', 'amarillo'];
-  var colorHex = [
-    const Color(0xFF0000FF),
-    const Color(0xFF00FF00),
-    const Color(0xFFFF914D),
-    const Color(0xFFFF66C4),
-    const Color(0xFFFF0000),
-    const Color(0xFFFBC512)
-  ];
+  bool tapped = false;
 
   @override
   void initState() {
     super.initState();
-    getRandomColor();
-    getRandomName();
     timer();
   }
 
   void timer() {
-    Timer.periodic(const Duration(milliseconds: 1500), (timer) {
-      getRandomColor();
-      getRandomName();
+    Timer.periodic(const Duration(milliseconds: 2000), (timer) {
+      if (!tapped && points > 0) {
+        points -= 2;
+      }
+      tapped = false;
       setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
+    Random random = Random();
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    double positionX = random.nextDouble() * (screenWidth - 120);
+    double maxPositionY = screenHeight * 0.2;
+    double positionY = maxPositionY + random.nextDouble() * (screenHeight - maxPositionY - 200);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Sección 9"),
+      ),
+      drawer: const MenuLateral(),
+      body: Stack(
+        children: [
+          Positioned(
+            top: screenHeight * 0.1,
+            left: screenWidth / 2 - 100,
+            child: Text(
               'Puntos: $points',
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              style: const TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
-            Center(
-              child: GestureDetector(
-                onTap: () {
-                  onGiftTap(randomName, randomColor);
-                },
-                child: Column(
-                  children: [
-                    Container(
-                      width: 120,
-                      color: randomColor,
-                      height: 120,
-                    ),
-                    Text(
-                      randomName,
-                      style:
-                          TextStyle(color: randomColor, fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+          Positioned(
+            left: positionX,
+            top: positionY,
+            child: GestureDetector(
+              onTap: () {
+                points++;
+                tapped = true;
+                setState(() {});
+              },
+              child: Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.blue,
+                    width: 4,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.5),
+                      blurRadius: 8,
+                      spreadRadius: 1,
+                      offset: const Offset(2, 2),
                     ),
                   ],
                 ),
+                child: ClipOval(
+                  child: SizedBox(
+                    width: 80,
+                    height: 80,
+                    child: Image.asset('assets/images/gato1.jpg', fit: BoxFit.cover),
+                  ),
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
-  }
-
-  void getRandomColor() {
-    Random random = Random();
-    int randomNumber = random.nextInt(5);
-    randomColor = colorHex[randomNumber];
-  }
-
-  void getRandomName() {
-    Random random = Random();
-    int randomNumber = random.nextInt(5);
-    randomName = colorNames[randomNumber];
-  }
-
-  String hexToStringConverter(Color hexColor) {
-    if (hexColor == const Color(0xFF0000FF)) {
-      return 'azul';
-    } else if (hexColor == const Color(0xFF00FF00)) {
-      return 'verde';
-    } else if (hexColor == const Color(0xFFFF914D)) {
-      return 'naranja';
-    } else if (hexColor == const Color(0xFFFF66C4)) {
-      return 'rosa';
-    } else if (hexColor == const Color(0xFFFF0000)) {
-      return 'rojo';
-    } else {
-      return 'amarillo';
-    }
-  }
-
-  void onGiftTap(String name, Color color) {
-    var colorToString = hexToStringConverter(color);
-    if (name == colorToString) {
-      points++;
-    } else {
-      points--;
-    }
-    setState(() {});
   }
 }
