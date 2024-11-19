@@ -7,17 +7,16 @@ class MenuLateral extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero, // Elimina padding predeterminado
+        padding: EdgeInsets.zero,
         children: <Widget>[
-          // Imagen de cabecera como DrawerHeader
           const DrawerHeader(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/09.jpeg'), // Ruta de la imagen
-                fit: BoxFit.cover, // La imagen ocupa todo el espacio disponible
+                image: AssetImage('assets/images/09.jpeg'),
+                fit: BoxFit.cover,
               ),
             ),
-            child: null, // No se agrega contenido adicional al header
+            child: null,
           ),
           _buildMenuItem(context, title: "Sección 1", route: '/seccion1'),
           _buildMenuItem(context, title: "Sección 2", route: '/seccion2'),
