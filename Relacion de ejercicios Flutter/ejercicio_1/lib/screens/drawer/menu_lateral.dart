@@ -7,78 +7,44 @@ class MenuLateral extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
+        padding: EdgeInsets.zero, // Elimina padding predeterminado
         children: <Widget>[
-          Ink(
-            color: Colors.indigo,
-            child: ListTile(
-              title: const Text(
-                "Sección 1",
-                style: TextStyle(color: Colors.white),
+          // Imagen de cabecera como DrawerHeader
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/09.jpeg'), // Ruta de la imagen
+                fit: BoxFit.cover, // La imagen ocupa todo el espacio disponible
               ),
-              onTap: () {
-                Navigator.pop(context); // Cerrar el Drawer
-                Navigator.pushNamed(context, '/seccion1');
-              },
             ),
+            child: null, // No se agrega contenido adicional al header
           ),
-          ListTile(
-            title: const Text("Sección 2"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion2');
-            },
-          ),
-          ListTile(
-            title: const Text("Sección 3"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion3');
-            },
-          ),
-          ListTile(
-            title: const Text("Sección 4"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion4');
-            },
-          ),
-          ListTile(
-            title: const Text("Sección 5"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion5');
-            },
-          ),
-          ListTile(
-            title: const Text("Sección 6"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion6');
-            },
-          ),
-          ListTile(
-            title: const Text("Sección 7"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion7');
-            },
-          ),
-          ListTile(
-            title: const Text("Sección 8"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion8');
-            },
-          ),
-          ListTile(
-            title: const Text("Sección 9"),
-            onTap: () {
-              Navigator.pop(context); // Cerrar el Drawer
-              Navigator.pushNamed(context, '/seccion9');
-            },
-          ),
+          _buildMenuItem(context, title: "Sección 1", route: '/seccion1'),
+          _buildMenuItem(context, title: "Sección 2", route: '/seccion2'),
+          _buildMenuItem(context, title: "Sección 3", route: '/seccion3'),
+          _buildMenuItem(context, title: "Sección 4", route: '/seccion4'),
+          _buildMenuItem(context, title: "Sección 5", route: '/seccion5'),
+          _buildMenuItem(context, title: "Sección 6", route: '/seccion6'),
+          _buildMenuItem(context, title: "Sección 7", route: '/seccion7'),
+          _buildMenuItem(context, title: "Sección 8", route: '/seccion8'),
+          _buildMenuItem(context, title: "Sección 9", route: '/seccion9'),
         ],
       ),
+    );
+  }
+
+  Widget _buildMenuItem(
+    BuildContext context, {
+    required String title,
+    required String route,
+    Color textColor = Colors.black,
+  }) {
+    return ListTile(
+      title: Text(title, style: TextStyle(color: textColor)),
+      onTap: () {
+        Navigator.pop(context);
+        Navigator.pushNamed(context, route);
+      },
     );
   }
 }
