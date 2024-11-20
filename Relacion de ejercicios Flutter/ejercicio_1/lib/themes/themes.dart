@@ -9,9 +9,9 @@ class AppThemes {
       secondary: Colors.green,
     ),
     scaffoldBackgroundColor: Colors.white,
-    textTheme: TextTheme(
-      bodyLarge: const TextStyle(fontSize: 18, color: Colors.black),
-      bodyMedium: TextStyle(fontSize: 16, color: Colors.grey[700]),
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(fontSize: 18, color: Color.fromARGB(255, 255, 255, 255)),
+      bodyMedium: TextStyle(fontSize: 16, color: Color.fromARGB(255, 255, 255, 255)),
     ),
     appBarTheme: const AppBarTheme(
       color: Colors.blue,

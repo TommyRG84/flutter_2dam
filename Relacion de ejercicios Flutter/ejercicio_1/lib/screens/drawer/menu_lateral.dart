@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ejercicio_1/themes/theme_notifier.dart'; // Importar ThemeNotifier
-import 'package:provider/provider.dart'; // Importar Provider
+import 'package:provider/provider.dart';
+import 'package:ejercicio_1/themes/theme_notifier.dart';
 
 class MenuLateral extends StatelessWidget {
-  const MenuLateral({super.key, required Function(String p1) onThemeChanged});
+  const MenuLateral({super.key});
 
   @override
   Widget build(BuildContext context) {

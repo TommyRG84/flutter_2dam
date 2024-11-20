@@ -10,7 +10,7 @@ class Seccion7 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Contador de clics"),
       ),
-      drawer: MenuLateral(onThemeChanged: (theme) {}),
+      drawer: const MenuLateral(),
       body: const MiClase(
         title: 'Contador de clics',
       ),

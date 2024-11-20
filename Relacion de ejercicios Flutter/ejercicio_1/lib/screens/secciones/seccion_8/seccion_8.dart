@@ -23,7 +23,7 @@ class Seccion8 extends StatelessWidget {
           ),
         ],
       ),
-      drawer: MenuLateral(onThemeChanged: (theme) {}),
+      drawer: const MenuLateral(),
       body: const BodyApp(),
     );
   }
