@@ -1,14 +1,16 @@
-import 'package:ejercicio_1/themes/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:ejercicio_1/themes/theme_notifier.dart'; // Importar el ThemeNotifier
+import 'package:provider/provider.dart'; // Importar Provider
 
 class MenuLateral extends StatelessWidget {
-  final Function(String) onThemeChanged; // Recibe la función para cambiar el tema
+  final Function(String) onThemeChanged;
 
-  const MenuLateral({super.key, required this.onThemeChanged}); // Constructor que recibe la función
+  const MenuLateral({super.key, required this.onThemeChanged}); // Recibir la función onThemeChanged
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
@@ -21,6 +23,8 @@ class MenuLateral extends StatelessWidget {
             ),
             child: null,
           ),
+          // Aquí agregamos las secciones del menú lateral
+          _buildMenuItem(context, title: "Cambiar Tema", route: null),
           _buildMenuItem(context, title: "Sección 1", route: '/seccion1'),
           _buildMenuItem(context, title: "Sección 2", route: '/seccion2'),
           _buildMenuItem(context, title: "Sección 3", route: '/seccion3'),
@@ -30,33 +34,27 @@ class MenuLateral extends StatelessWidget {
           _buildMenuItem(context, title: "Sección 7", route: '/seccion7'),
           _buildMenuItem(context, title: "Sección 8", route: '/seccion8'),
           _buildMenuItem(context, title: "Sección 9", route: '/seccion9'),
-          _buildMenuItem(context,
-              title: "Cambiar Tema", route: null) // Agregamos un ítem para cambiar el tema
         ],
       ),
     );
   }
 
-  Widget _buildMenuItem(
-    BuildContext context, {
-    required String title,
-    String? route,
-    Color textColor = Colors.black,
-  }) {
+  // Función para construir los elementos del menú
+  Widget _buildMenuItem(BuildContext context, {required String title, String? route}) {
     return ListTile(
-      title: Text(title, style: TextStyle(color: textColor)),
+      title: Text(title),
       onTap: () {
-        Navigator.pop(context);
+        Navigator.pop(context); // Cierra el menú lateral
         if (route != null) {
-          Navigator.pushNamed(context, route);
+          Navigator.pushNamed(context, route); // Navega si hay una ruta definida
         } else {
-          // Si se toca "Cambiar Tema", se muestra un diálogo para cambiar el tema
-          _showThemeDialog(context);
+          _showThemeDialog(context); // Muestra el diálogo para cambiar el tema
         }
       },
     );
   }
 
+  // Función para mostrar el diálogo de selección de tema
   void _showThemeDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -65,15 +63,24 @@ class MenuLateral extends StatelessWidget {
           title: const Text("Selecciona un tema"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
-            children: AppThemes.themes.keys.map((String theme) {
-              return ListTile(
-                title: Text(theme),
+            children: <Widget>[
+              ListTile(
+                title: const Text("Claro"),
                 onTap: () {
-                  onThemeChanged(theme); // Llama a la función de cambio de tema
-                  Navigator.pop(context);
+                  // Cambiar a tema claro
+                  Provider.of<ThemeNotifier>(context, listen: false).setTheme(ThemeData.light());
+                  Navigator.pop(context); // Cierra el diálogo
                 },
-              );
-            }).toList(),
+              ),
+              ListTile(
+                title: const Text("Oscuro"),
+                onTap: () {
+                  // Cambiar a tema oscuro
+                  Provider.of<ThemeNotifier>(context, listen: false).setTheme(ThemeData.dark());
+                  Navigator.pop(context); // Cierra el diálogo
+                },
+              ),
+            ],
           ),
         );
       },
