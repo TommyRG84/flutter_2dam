@@ -10,23 +10,20 @@ class Seccion2 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Sección 2"),
       ),
-      drawer: const MenuLateral(),
+      drawer: MenuLateral(onThemeChanged: (theme) {}),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Imagen 1
             SizedBox(
-              width: 120, // Ancho fijo
-              height: 150, // Alto fijo
+              width: 120,
+              height: 150,
               child: Image.asset(
                 "assets/images/obey1.jpg",
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(width: 10), // Espacio entre las imágenes
-
-            // Imagen 2
+            const SizedBox(width: 10),
             SizedBox(
               width: 120, // Ancho fijo
               height: 170, // Alto fijo
@@ -35,12 +32,10 @@ class Seccion2 extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(width: 10), // Espacio entre las imágenes
-
-            // Imagen 3
+            const SizedBox(width: 10),
             SizedBox(
-              width: 120, // Ancho fijo
-              height: 150, // Alto fijo
+              width: 120,
+              height: 150,
               child: Image.asset(
                 "assets/images/obey2.jpg",
                 fit: BoxFit.cover,

@@ -1,7 +1,10 @@
+import 'package:ejercicio_1/themes/themes.dart';
 import 'package:flutter/material.dart';
 
 class MenuLateral extends StatelessWidget {
-  const MenuLateral({super.key});
+  final Function(String) onThemeChanged; // Recibe la función para cambiar el tema
+
+  const MenuLateral({super.key, required this.onThemeChanged}); // Constructor que recibe la función
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +30,8 @@ class MenuLateral extends StatelessWidget {
           _buildMenuItem(context, title: "Sección 7", route: '/seccion7'),
           _buildMenuItem(context, title: "Sección 8", route: '/seccion8'),
           _buildMenuItem(context, title: "Sección 9", route: '/seccion9'),
+          _buildMenuItem(context,
+              title: "Cambiar Tema", route: null) // Agregamos un ítem para cambiar el tema
         ],
       ),
     );
@@ -35,14 +40,42 @@ class MenuLateral extends StatelessWidget {
   Widget _buildMenuItem(
     BuildContext context, {
     required String title,
-    required String route,
+    String? route,
     Color textColor = Colors.black,
   }) {
     return ListTile(
       title: Text(title, style: TextStyle(color: textColor)),
       onTap: () {
         Navigator.pop(context);
-        Navigator.pushNamed(context, route);
+        if (route != null) {
+          Navigator.pushNamed(context, route);
+        } else {
+          // Si se toca "Cambiar Tema", se muestra un diálogo para cambiar el tema
+          _showThemeDialog(context);
+        }
+      },
+    );
+  }
+
+  void _showThemeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Selecciona un tema"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: AppThemes.themes.keys.map((String theme) {
+              return ListTile(
+                title: Text(theme),
+                onTap: () {
+                  onThemeChanged(theme); // Llama a la función de cambio de tema
+                  Navigator.pop(context);
+                },
+              );
+            }).toList(),
+          ),
+        );
       },
     );
   }

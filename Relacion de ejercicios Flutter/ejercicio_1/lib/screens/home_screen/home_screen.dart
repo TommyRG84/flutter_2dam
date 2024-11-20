@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PantallaBienvenida extends StatelessWidget {
-  const PantallaBienvenida({super.key});
+  final Function(String) onThemeChanged; // Agregar este parámetro
+
+  const PantallaBienvenida(
+      {super.key, required this.onThemeChanged}); // Asegúrate de recibirlo en el constructor
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Ejercicio 01')),
+        title: const Center(child: Text('Relación de ejercicios')),
       ),
-      drawer: const MenuLateral(),
+      drawer: MenuLateral(onThemeChanged: onThemeChanged), // Pasar onThemeChanged aquí
       body: Center(
         child: Text('Bienvenido',
             style: GoogleFonts.anton(

@@ -18,12 +18,12 @@ class Seccion8 extends StatelessWidget {
         ),
         actions: const [
           Padding(
-            padding: EdgeInsets.only(right: 16.0), // Añadimos padding a la derecha
+            padding: EdgeInsets.only(right: 16.0),
             child: Icon(Icons.menu),
           ),
         ],
       ),
-      drawer: const MenuLateral(),
+      drawer: MenuLateral(onThemeChanged: (theme) {}),
       body: const BodyApp(),
     );
   }

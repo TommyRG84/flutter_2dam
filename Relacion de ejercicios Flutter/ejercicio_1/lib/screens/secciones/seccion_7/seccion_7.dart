@@ -6,10 +6,12 @@ class Seccion7 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Contador de clics",
-      home: MiClase(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Contador de clics"),
+      ),
+      drawer: MenuLateral(onThemeChanged: (theme) {}),
+      body: const MiClase(
         title: 'Contador de clics',
       ),
     );
@@ -19,6 +21,7 @@ class Seccion7 extends StatelessWidget {
 class MiClase extends StatefulWidget {
   const MiClase({super.key, required this.title});
   final String title;
+
   @override
   State<MiClase> createState() => _MiClase();
 }
@@ -35,10 +38,6 @@ class _MiClase extends State<MiClase> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      drawer: const MenuLateral(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -56,8 +55,11 @@ class _MiClase extends State<MiClase> {
           ],
         ),
       ),
-      floatingActionButton:
-          FloatingActionButton(onPressed: _incrementar, child: const Icon(Icons.add)),
+      // Aquí está el FloatingActionButton
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementar, // Llama a _incrementar cuando se presiona
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

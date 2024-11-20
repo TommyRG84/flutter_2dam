@@ -44,7 +44,7 @@ class JuegoImagenAleatoria extends State<Seccion9> {
       appBar: AppBar(
         title: const Text("Sección 9"),
       ),
-      drawer: const MenuLateral(),
+      drawer: MenuLateral(onThemeChanged: (theme) {}),
       body: Stack(
         children: [
           Positioned(

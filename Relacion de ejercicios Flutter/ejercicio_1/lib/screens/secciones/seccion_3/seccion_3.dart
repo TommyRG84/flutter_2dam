@@ -10,7 +10,7 @@ class Seccion3 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Sección 3"),
       ),
-      drawer: const MenuLateral(),
+      drawer: MenuLateral(onThemeChanged: (theme) {}),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

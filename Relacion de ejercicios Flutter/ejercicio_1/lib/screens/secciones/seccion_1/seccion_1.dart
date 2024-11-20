@@ -11,7 +11,7 @@ class Seccion1 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Sección 1"),
       ),
-      drawer: const MenuLateral(),
+      drawer: MenuLateral(onThemeChanged: (theme) {}),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -10,7 +10,7 @@ class Seccion5 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Sección 5"),
       ),
-      drawer: const MenuLateral(),
+      drawer: MenuLateral(onThemeChanged: (theme) {}),
       body: Center(
         child: Container(
           margin: const EdgeInsets.all(40),
@@ -18,7 +18,7 @@ class Seccion5 extends StatelessWidget {
           height: 120,
           alignment: Alignment.centerLeft,
           decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 255, 72, 0), //blue
+              color: Color.fromARGB(255, 255, 72, 0),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40),
                   topRight: Radius.circular(60),
