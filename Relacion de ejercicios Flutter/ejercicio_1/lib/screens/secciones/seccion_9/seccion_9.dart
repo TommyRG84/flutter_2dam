@@ -40,6 +40,12 @@ class JuegoImagenAleatoria extends State<Seccion9> {
     double maxPositionY = screenHeight * 0.2;
     double positionY = maxPositionY + random.nextDouble() * (screenHeight - maxPositionY - 200);
 
+    // Obtener el brillo actual del tema (claro u oscuro)
+    Brightness brightness = Theme.of(context).brightness;
+
+    // Establecer el color del texto según el brillo
+    Color textoColor = (brightness == Brightness.dark) ? Colors.white : Colors.black;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Sección 9"),
@@ -52,10 +58,10 @@ class JuegoImagenAleatoria extends State<Seccion9> {
             left: screenWidth / 2 - 100,
             child: Text(
               'Puntos: $points',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: textoColor, // Color dinámico según el brillo del tema
               ),
             ),
           ),

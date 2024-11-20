@@ -1,69 +1,36 @@
 import 'package:flutter/material.dart';
 
-class AppThemes {
-  // Tema claro (por defecto)
-  static final ThemeData lightTheme = ThemeData(
-    primaryColor: Colors.blue, // Color principal
+// Colores personalizados de la paleta Evangelion
+const Color evangelionRed = Color(0xFFF23545); // Rojo
+const Color evangelionPurple = Color(0xFF463973); // Púrpura
+const Color evangelionDarkPurple = Color(0xFF382E59); // Púrpura oscuro
+const Color evangelionLightRed = Color(0xFFF23030); // Rojo claro
+const Color evangelionDarkRed = Color(0xFF8C2626); // Rojo oscuro
+
+// Tema personalizado con la paleta Evangelion
+ThemeData customTheme() {
+  return ThemeData(
+    primaryColor: evangelionRed, // Rojo como color primario
     colorScheme: const ColorScheme.light(
-      primary: Colors.blue,
-      secondary: Colors.green,
+      primary: evangelionRed, // Rojo como color primario
+      secondary: evangelionPurple, // Púrpura como color secundario
     ),
-    scaffoldBackgroundColor: Colors.white,
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(fontSize: 18, color: Color.fromARGB(255, 255, 255, 255)),
-      bodyMedium: TextStyle(fontSize: 16, color: Color.fromARGB(255, 255, 255, 255)),
+      bodyLarge: TextStyle(color: evangelionDarkRed), // Texto con color rojo oscuro
+      bodyMedium: TextStyle(color: evangelionLightRed), // Texto con rojo claro
+      displayLarge: TextStyle(color: evangelionPurple, fontSize: 24), // Títulos en púrpura
     ),
     appBarTheme: const AppBarTheme(
-      color: Colors.blue,
-      iconTheme: IconThemeData(color: Colors.white),
+      color: evangelionRed, // Barra de la app con color rojo
+      iconTheme: IconThemeData(color: Colors.white), // Íconos en blanco
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: Colors.blue,
-      textTheme: ButtonTextTheme.primary,
+      buttonColor: evangelionPurple, // Botones de color púrpura
+      textTheme: ButtonTextTheme.primary, // Texto de botones en color primario
     ),
-  );
-
-  // Tema oscuro
-  static final ThemeData darkTheme = ThemeData(
-    primaryColor: Colors.grey[850],
-    colorScheme: const ColorScheme.dark(
-      primary: Colors.grey,
-      secondary: Colors.red,
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: evangelionDarkPurple, // Fondo del drawer en púrpura oscuro
     ),
-    scaffoldBackgroundColor: Colors.black,
-    textTheme: TextTheme(
-      bodyLarge: const TextStyle(fontSize: 18, color: Colors.white),
-      bodyMedium: TextStyle(fontSize: 16, color: Colors.grey[400]),
-    ),
-    appBarTheme: const AppBarTheme(
-      color: Colors.grey,
-      iconTheme: IconThemeData(color: Colors.white),
-    ),
-    buttonTheme: const ButtonThemeData(
-      buttonColor: Colors.grey,
-      textTheme: ButtonTextTheme.primary,
-    ),
-  );
-
-  // Tema personalizado
-  static final ThemeData customTheme = ThemeData(
-    primaryColor: Colors.deepPurple,
-    colorScheme: const ColorScheme.light(
-      primary: Colors.deepPurple,
-      secondary: Colors.amber,
-    ),
-    scaffoldBackgroundColor: Colors.white,
-    textTheme: TextTheme(
-      bodyLarge: const TextStyle(fontSize: 18, color: Colors.black),
-      bodyMedium: TextStyle(fontSize: 16, color: Colors.grey[700]),
-    ),
-    appBarTheme: const AppBarTheme(
-      color: Colors.deepPurple,
-      iconTheme: IconThemeData(color: Colors.white),
-    ),
-    buttonTheme: const ButtonThemeData(
-      buttonColor: Colors.deepPurple,
-      textTheme: ButtonTextTheme.primary,
-    ),
+    scaffoldBackgroundColor: evangelionDarkPurple, // Fondo principal de la app en púrpura oscuro
   );
 }
