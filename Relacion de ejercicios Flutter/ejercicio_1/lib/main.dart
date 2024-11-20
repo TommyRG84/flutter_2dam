@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart'; // Importar el paquete provider
-import 'package:ejercicio_1/themes/theme_notifier.dart'; // Importar el ThemeNotifier
-import 'package:provider/provider.dart';
-import 'screens/screens.dart'; // Importar las pantallas de la aplicación
+import 'package:flutter/material.dart';
+import 'package:ejercicio_1/themes/theme_notifier.dart'; // Importar ThemeNotifier
+import 'package:provider/provider.dart'; // Importar Provider
+import 'package:ejercicio_1/screens/screens.dart'; // Importar las pantallas de la aplicación
 
 void main() {
   runApp(const MyApp());
@@ -13,22 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => ThemeNotifier(), // Crear y proporcionar el ThemeNotifier
+      create: (_) => ThemeNotifier(),
       child: Consumer<ThemeNotifier>(
         builder: (context, themeNotifier, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Relación de ejercicios',
-            theme: themeNotifier.theme, // Establecer el tema actual
+            theme: themeNotifier.theme, // Usar el tema actual del ThemeNotifier
             initialRoute: '/',
             routes: {
               '/': (context) => PantallaBienvenida(
-                    onThemeChanged: (theme) {
-                      if (theme == 'Claro') {
-                        themeNotifier.setTheme(ThemeData.light());
-                      } else {
-                        themeNotifier.setTheme(ThemeData.dark());
-                      }
+                    onThemeChanged: (String theme) {
+                      // Aquí pasas la función que cambiará el tema
+                      themeNotifier.setTheme(theme);
                     },
                   ),
               '/seccion1': (context) => const Seccion1(),

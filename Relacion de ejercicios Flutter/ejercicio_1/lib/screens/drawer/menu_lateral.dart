@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ejercicio_1/themes/theme_notifier.dart'; // Importar el ThemeNotifier
+import 'package:ejercicio_1/themes/theme_notifier.dart'; // Importar ThemeNotifier
 import 'package:provider/provider.dart'; // Importar Provider
 
 class MenuLateral extends StatelessWidget {
-  final Function(String) onThemeChanged;
-
-  const MenuLateral({super.key, required this.onThemeChanged}); // Recibir la función onThemeChanged
+  const MenuLateral({super.key, required Function(String p1) onThemeChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,6 @@ class MenuLateral extends StatelessWidget {
             ),
             child: null,
           ),
-          // Aquí agregamos las secciones del menú lateral
           _buildMenuItem(context, title: "Cambiar Tema", route: null),
           _buildMenuItem(context, title: "Sección 1", route: '/seccion1'),
           _buildMenuItem(context, title: "Sección 2", route: '/seccion2'),
@@ -39,22 +36,20 @@ class MenuLateral extends StatelessWidget {
     );
   }
 
-  // Función para construir los elementos del menú
   Widget _buildMenuItem(BuildContext context, {required String title, String? route}) {
     return ListTile(
       title: Text(title),
       onTap: () {
-        Navigator.pop(context); // Cierra el menú lateral
+        Navigator.pop(context);
         if (route != null) {
-          Navigator.pushNamed(context, route); // Navega si hay una ruta definida
+          Navigator.pushNamed(context, route);
         } else {
-          _showThemeDialog(context); // Muestra el diálogo para cambiar el tema
+          _showThemeDialog(context); // Mostrar diálogo para elegir tema
         }
       },
     );
   }
 
-  // Función para mostrar el diálogo de selección de tema
   void _showThemeDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -67,16 +62,21 @@ class MenuLateral extends StatelessWidget {
               ListTile(
                 title: const Text("Claro"),
                 onTap: () {
-                  // Cambiar a tema claro
-                  Provider.of<ThemeNotifier>(context, listen: false).setTheme(ThemeData.light());
+                  Provider.of<ThemeNotifier>(context, listen: false).setTheme('Claro');
                   Navigator.pop(context); // Cierra el diálogo
                 },
               ),
               ListTile(
                 title: const Text("Oscuro"),
                 onTap: () {
-                  // Cambiar a tema oscuro
-                  Provider.of<ThemeNotifier>(context, listen: false).setTheme(ThemeData.dark());
+                  Provider.of<ThemeNotifier>(context, listen: false).setTheme('Oscuro');
+                  Navigator.pop(context); // Cierra el diálogo
+                },
+              ),
+              ListTile(
+                title: const Text("Personalizado"),
+                onTap: () {
+                  Provider.of<ThemeNotifier>(context, listen: false).setTheme('Personalizado');
                   Navigator.pop(context); // Cierra el diálogo
                 },
               ),

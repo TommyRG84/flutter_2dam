@@ -1,62 +1,69 @@
 import 'package:flutter/material.dart';
 
 class AppThemes {
-  static final Map<String, ThemeData> themes = {
-    'Claro': ThemeData(
-      useMaterial3: true,
-      brightness: Brightness.light,
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.light),
-      scaffoldBackgroundColor: Colors.white,
-      textTheme: const TextTheme(
-        bodyLarge: TextStyle(fontSize: 20, color: Colors.black, fontFamily: 'Roboto'),
-        bodyMedium: TextStyle(fontSize: 16, color: Colors.black, fontFamily: 'Roboto'),
-        titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Roboto'),
-      ),
-      drawerTheme: const DrawerThemeData(
-        backgroundColor: Colors.white,
-        scrimColor: Colors.black45,
-        elevation: 16.0,
-      ),
+  // Tema claro (por defecto)
+  static final ThemeData lightTheme = ThemeData(
+    primaryColor: Colors.blue, // Color principal
+    colorScheme: const ColorScheme.light(
+      primary: Colors.blue,
+      secondary: Colors.green,
     ),
-    'Oscuro': ThemeData(
-      useMaterial3: true,
-      brightness: Brightness.dark,
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey, brightness: Brightness.dark),
-      scaffoldBackgroundColor: Colors.black,
-      textTheme: const TextTheme(
-        bodyLarge: TextStyle(fontSize: 20, color: Colors.white, fontFamily: 'Roboto'),
-        bodyMedium: TextStyle(fontSize: 16, color: Colors.white70, fontFamily: 'Roboto'),
-        titleLarge: TextStyle(
-            fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: 'Roboto'),
-      ),
-      drawerTheme: const DrawerThemeData(
-        backgroundColor: Colors.black, // Fondo oscuro para el Drawer
-        scrimColor: Colors.black45,
-        elevation: 16.0,
-      ),
+    scaffoldBackgroundColor: Colors.white,
+    textTheme: TextTheme(
+      bodyLarge: const TextStyle(fontSize: 18, color: Colors.black),
+      bodyMedium: TextStyle(fontSize: 16, color: Colors.grey[700]),
     ),
-    'Personalizado': ThemeData(
-      useMaterial3: true,
-      brightness: Brightness.light,
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: const Color.fromARGB(255, 30, 88, 136),
-        brightness: Brightness.light,
-      ),
-      scaffoldBackgroundColor: const Color.fromARGB(255, 255, 245, 230),
-      textTheme: const TextTheme(
-        bodyLarge: TextStyle(fontSize: 20, color: Colors.deepPurple, fontFamily: 'Lobster'),
-        bodyMedium: TextStyle(fontSize: 16, color: Colors.deepPurpleAccent, fontFamily: 'Lobster'),
-        titleLarge: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
-            fontFamily: 'Lobster'),
-      ),
-      drawerTheme: const DrawerThemeData(
-        backgroundColor: Colors.white,
-        scrimColor: Colors.black45,
-        elevation: 16.0,
-      ),
+    appBarTheme: const AppBarTheme(
+      color: Colors.blue,
+      iconTheme: IconThemeData(color: Colors.white),
     ),
-  };
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.blue,
+      textTheme: ButtonTextTheme.primary,
+    ),
+  );
+
+  // Tema oscuro
+  static final ThemeData darkTheme = ThemeData(
+    primaryColor: Colors.grey[850],
+    colorScheme: const ColorScheme.dark(
+      primary: Colors.grey,
+      secondary: Colors.red,
+    ),
+    scaffoldBackgroundColor: Colors.black,
+    textTheme: TextTheme(
+      bodyLarge: const TextStyle(fontSize: 18, color: Colors.white),
+      bodyMedium: TextStyle(fontSize: 16, color: Colors.grey[400]),
+    ),
+    appBarTheme: const AppBarTheme(
+      color: Colors.grey,
+      iconTheme: IconThemeData(color: Colors.white),
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.grey,
+      textTheme: ButtonTextTheme.primary,
+    ),
+  );
+
+  // Tema personalizado
+  static final ThemeData customTheme = ThemeData(
+    primaryColor: Colors.deepPurple,
+    colorScheme: const ColorScheme.light(
+      primary: Colors.deepPurple,
+      secondary: Colors.amber,
+    ),
+    scaffoldBackgroundColor: Colors.white,
+    textTheme: TextTheme(
+      bodyLarge: const TextStyle(fontSize: 18, color: Colors.black),
+      bodyMedium: TextStyle(fontSize: 16, color: Colors.grey[700]),
+    ),
+    appBarTheme: const AppBarTheme(
+      color: Colors.deepPurple,
+      iconTheme: IconThemeData(color: Colors.white),
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.deepPurple,
+      textTheme: ButtonTextTheme.primary,
+    ),
+  );
 }
