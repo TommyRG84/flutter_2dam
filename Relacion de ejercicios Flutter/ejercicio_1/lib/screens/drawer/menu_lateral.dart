@@ -30,7 +30,7 @@ ThemeData customTheme() {
       buttonColor: evangelionPurple, // Botones de color púrpura
       textTheme: ButtonTextTheme.primary, // Texto de botones en color primario
     ),
-    drawerTheme: DrawerThemeData(
+    drawerTheme: const DrawerThemeData(
       backgroundColor: evangelionDarkPurple, // Fondo del drawer en púrpura oscuro
     ),
     scaffoldBackgroundColor: evangelionDarkPurple, // Fondo principal de la app en púrpura oscuro

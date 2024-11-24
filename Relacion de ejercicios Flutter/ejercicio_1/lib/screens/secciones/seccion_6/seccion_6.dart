@@ -11,100 +11,50 @@ class Seccion6 extends StatelessWidget {
         title: const Text("Sección 6"),
       ),
       drawer: const MenuLateral(),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.adb,
-                  color: Colors.teal,
-                )
-              ],
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 0, 107, 150),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 0, 62, 150),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 0, 22, 150),
-                )
-              ],
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 12, 0, 150),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 67, 0, 150),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 120, 0, 150),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 150, 0, 137),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 150, 0, 85),
-                )
-              ],
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 150, 0, 45),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 150, 0, 0),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 150, 25, 0),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 150, 80, 0),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 150, 132, 0),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 95, 150, 0),
-                ),
-                Icon(
-                  Icons.adb,
-                  color: Color.fromARGB(255, 17, 150, 0),
-                ),
-              ],
-            ),
+            _filaDeIconos([Colors.teal]),
+            const SizedBox(height: 10),
+            _filaDeIconos([
+              const Color.fromARGB(255, 0, 107, 150),
+              const Color.fromARGB(255, 0, 62, 150),
+              const Color.fromARGB(255, 0, 22, 150),
+            ]),
+            const SizedBox(height: 10),
+            _filaDeIconos([
+              const Color.fromARGB(255, 12, 0, 150),
+              const Color.fromARGB(255, 67, 0, 150),
+              const Color.fromARGB(255, 120, 0, 150),
+              const Color.fromARGB(255, 150, 0, 137),
+              const Color.fromARGB(255, 150, 0, 85),
+            ]),
+            const SizedBox(height: 10),
+            _filaDeIconos([
+              const Color.fromARGB(255, 150, 0, 45),
+              const Color.fromARGB(255, 150, 0, 0),
+              const Color.fromARGB(255, 150, 25, 0),
+              const Color.fromARGB(255, 150, 80, 0),
+              const Color.fromARGB(255, 150, 132, 0),
+              const Color.fromARGB(255, 95, 150, 0),
+              const Color.fromARGB(255, 17, 150, 0),
+            ]),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _filaDeIconos(List<Color> colors) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: colors
+          .map((color) => Icon(
+                Icons.adb,
+                color: color,
+              ))
+          .toList(),
     );
   }
 }
