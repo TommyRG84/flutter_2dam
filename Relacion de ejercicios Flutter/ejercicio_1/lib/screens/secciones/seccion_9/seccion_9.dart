@@ -34,6 +34,15 @@ class JuegoImagenAleatoria extends State<Seccion9> {
     Timer.periodic(const Duration(milliseconds: 2000), (timer) {
       if (!tapped && points > 0) {
         points -= 2;
+        if (points < 0) {
+          points = 0;
+        }
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('¡Fallaste! -2 Puntos'),
+            duration: Duration(milliseconds: 500),
+          ),
+        );
       }
       tapped = false;
       setState(() {});
@@ -94,6 +103,12 @@ class JuegoImagenAleatoria extends State<Seccion9> {
             top: positionY,
             child: GestureDetector(
               onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('¡Acertaste! +1 Punto'),
+                    duration: Duration(milliseconds: 500),
+                  ),
+                );
                 points++;
                 tapped = true;
                 setState(() {});
@@ -120,8 +135,7 @@ class JuegoImagenAleatoria extends State<Seccion9> {
                   child: SizedBox(
                     width: 80,
                     height: 80,
-                    child: Image.asset(imagenAleatoria,
-                        fit: BoxFit.cover), // Usamos la imagen aleatoria
+                    child: Image.asset(imagenAleatoria, fit: BoxFit.cover),
                   ),
                 ),
               ),

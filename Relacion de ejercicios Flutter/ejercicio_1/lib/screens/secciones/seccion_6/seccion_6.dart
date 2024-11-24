@@ -15,30 +15,19 @@ class Seccion6 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _filaDeIconos([Colors.teal]),
-            const SizedBox(height: 10),
             _filaDeIconos([
-              const Color.fromARGB(255, 0, 107, 150),
-              const Color.fromARGB(255, 0, 62, 150),
-              const Color.fromARGB(255, 0, 22, 150),
+              {'icon': Icons.settings, 'label': 'Ajustes', 'color': Colors.blue},
             ]),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             _filaDeIconos([
-              const Color.fromARGB(255, 12, 0, 150),
-              const Color.fromARGB(255, 67, 0, 150),
-              const Color.fromARGB(255, 120, 0, 150),
-              const Color.fromARGB(255, 150, 0, 137),
-              const Color.fromARGB(255, 150, 0, 85),
+              {'icon': Icons.map, 'label': 'Mapa', 'color': Colors.green},
+              {'icon': Icons.notifications, 'label': 'Notificaciones', 'color': Colors.red},
             ]),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             _filaDeIconos([
-              const Color.fromARGB(255, 150, 0, 45),
-              const Color.fromARGB(255, 150, 0, 0),
-              const Color.fromARGB(255, 150, 25, 0),
-              const Color.fromARGB(255, 150, 80, 0),
-              const Color.fromARGB(255, 150, 132, 0),
-              const Color.fromARGB(255, 95, 150, 0),
-              const Color.fromARGB(255, 17, 150, 0),
+              {'icon': Icons.camera_alt, 'label': 'Cámara', 'color': Colors.purple},
+              {'icon': Icons.phone, 'label': 'Teléfono', 'color': Colors.orange},
+              {'icon': Icons.email, 'label': 'Correo', 'color': Colors.teal},
             ]),
           ],
         ),
@@ -46,15 +35,28 @@ class Seccion6 extends StatelessWidget {
     );
   }
 
-  Widget _filaDeIconos(List<Color> colors) {
+  Widget _filaDeIconos(List<Map<String, dynamic>> elementos) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: colors
-          .map((color) => Icon(
-                Icons.adb,
-                color: color,
-              ))
-          .toList(),
+      children: elementos.map((elemento) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            children: [
+              Icon(
+                elemento['icon'],
+                size: 50,
+                color: elemento['color'] ?? Colors.teal, // Color predeterminado si no se especifica
+              ),
+              const SizedBox(height: 5),
+              Text(
+                elemento['label'],
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 }
