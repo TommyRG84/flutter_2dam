@@ -14,6 +14,16 @@ class JuegoImagenAleatoria extends State<Seccion9> {
   int points = 0;
   bool tapped = false;
 
+  // Lista de imágenes disponibles
+  final List<String> imagenes = [
+    'assets/images/gato1.jpg',
+    'assets/images/02.jpg',
+    'assets/images/03.jpg',
+    'assets/images/04.jpg',
+    'assets/images/05.jpg',
+    'assets/images/06.jpg',
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -46,6 +56,9 @@ class JuegoImagenAleatoria extends State<Seccion9> {
     // Establecer el color del texto según el brillo
     Color textoColor = (brightness == Brightness.dark) ? Colors.white : Colors.black;
 
+    // Seleccionar una imagen aleatoria de la lista
+    String imagenAleatoria = imagenes[random.nextInt(imagenes.length)];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Sección 9"),
@@ -53,8 +66,19 @@ class JuegoImagenAleatoria extends State<Seccion9> {
       drawer: const MenuLateral(),
       body: Stack(
         children: [
+          // Imagen de fondo
+          Positioned.fill(
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/catsBG.jpg'), // Ruta de la imagen de fondo
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
           Positioned(
-            top: screenHeight * 0.1,
+            top: screenHeight * 0.05,
             left: screenWidth / 2 - 100,
             child: Text(
               'Puntos: $points',
@@ -80,7 +104,7 @@ class JuegoImagenAleatoria extends State<Seccion9> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: Colors.blue,
+                    color: const Color.fromARGB(255, 233, 184, 6),
                     width: 4,
                   ),
                   boxShadow: [
@@ -96,7 +120,8 @@ class JuegoImagenAleatoria extends State<Seccion9> {
                   child: SizedBox(
                     width: 80,
                     height: 80,
-                    child: Image.asset('assets/images/gato1.jpg', fit: BoxFit.cover),
+                    child: Image.asset(imagenAleatoria,
+                        fit: BoxFit.cover), // Usamos la imagen aleatoria
                   ),
                 ),
               ),
