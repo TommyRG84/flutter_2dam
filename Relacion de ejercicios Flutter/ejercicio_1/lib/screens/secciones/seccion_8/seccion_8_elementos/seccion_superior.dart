@@ -27,7 +27,7 @@ class SeccionSuperior extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 15,
+                width: 12,
               ),
               const Column(
                 children: [
@@ -45,7 +45,7 @@ class SeccionSuperior extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 15,
+                width: 12,
               ),
               const Column(
                 children: [
@@ -63,7 +63,7 @@ class SeccionSuperior extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 15,
+                width: 12,
               ),
               const Column(
                 children: [

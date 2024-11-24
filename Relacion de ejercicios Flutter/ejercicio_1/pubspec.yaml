@@ -23,7 +23,7 @@ flutter:
   fonts:
     - family: HelpMe
       fonts:
-        - asset: assets/fonts/HelpMe.ttf
+        - asset: assets/fonts/Garet-Book.ttf
           weight: 700
 
   assets:
