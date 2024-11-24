@@ -7,7 +7,7 @@ const Color evangelionDarkPurple = Color(0xFF382E59); // Púrpura oscuro
 const Color evangelionLightRed = Color(0xFFF23030); // Rojo claro
 const Color evangelionDarkRed = Color(0xFF8C2626); // Rojo oscuro
 
-// Tema personalizado con la paleta Evangelion
+// Tema personalizado con la paleta Evangelion y fuente Onether
 ThemeData customTheme() {
   return ThemeData(
     primaryColor: evangelionRed, // Rojo como color primario
@@ -16,9 +16,19 @@ ThemeData customTheme() {
       secondary: evangelionPurple, // Púrpura como color secundario
     ),
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: evangelionDarkRed), // Texto con color rojo oscuro
-      bodyMedium: TextStyle(color: evangelionLightRed), // Texto con rojo claro
-      displayLarge: TextStyle(color: evangelionPurple, fontSize: 24), // Títulos en púrpura
+      bodyLarge: TextStyle(
+        color: evangelionDarkRed,
+        fontFamily: 'HelpMe', // Fuente personalizada
+      ),
+      bodyMedium: TextStyle(
+        color: evangelionLightRed,
+        fontFamily: 'HelpMe', // Fuente personalizada
+      ),
+      displayLarge: TextStyle(
+        color: evangelionPurple,
+        fontFamily: 'HelpMe', // Fuente personalizada
+        fontSize: 24,
+      ),
     ),
     appBarTheme: const AppBarTheme(
       color: evangelionRed, // Barra de la app con color rojo
@@ -32,5 +42,6 @@ ThemeData customTheme() {
       backgroundColor: evangelionDarkPurple, // Fondo del drawer en púrpura oscuro
     ),
     scaffoldBackgroundColor: evangelionDarkPurple, // Fondo principal de la app en púrpura oscuro
+    fontFamily: 'HelpMe', // Fuente predeterminada para toda la app
   );
 }

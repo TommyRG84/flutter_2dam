@@ -21,9 +21,9 @@ flutter:
   uses-material-design: true
 
   fonts:
-    - family: Onether
+    - family: HelpMe
       fonts:
-        - asset: assets/fonts/Onether.ttf
+        - asset: assets/fonts/HelpMe.ttf
           weight: 700
 
   assets:
