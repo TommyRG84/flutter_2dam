@@ -11,36 +11,46 @@ class Seccion5 extends StatelessWidget {
         title: const Text("Sección 5"),
       ),
       drawer: const MenuLateral(),
-      body: Center(
-        child: Container(
-          margin: const EdgeInsets.all(40),
-          width: 350,
-          height: 120,
-          alignment: Alignment.centerLeft,
-          decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 255, 72, 0),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(60),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.elliptical(10, 10))),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
+            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+          ),
+        ),
+        child: Center(
           child: Container(
-            width: 210,
+            margin: const EdgeInsets.all(40),
+            width: 350,
             height: 120,
+            alignment: Alignment.centerLeft,
             decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 255, 183, 0), //light blue
+              color: Color.fromARGB(255, 255, 72, 0),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(40),
                 topRight: Radius.circular(60),
                 bottomLeft: Radius.circular(20),
+                bottomRight: Radius.elliptical(10, 10),
               ),
             ),
-            alignment: Alignment.center,
-            child: const Text(
-              'Sección 5',
-              style: TextStyle(
-                fontSize: 32,
-                color: Colors.white,
+            child: Container(
+              width: 210,
+              height: 120,
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 255, 183, 0), //light blue
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(60),
+                  bottomLeft: Radius.circular(20),
+                ),
+              ),
+              alignment: Alignment.center,
+              child: const Text(
+                'Sección 5',
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),

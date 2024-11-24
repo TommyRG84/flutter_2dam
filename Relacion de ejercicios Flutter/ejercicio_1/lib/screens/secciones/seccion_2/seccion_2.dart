@@ -11,37 +11,45 @@ class Seccion2 extends StatelessWidget {
         title: const Text("Sección 2"),
       ),
       drawer: const MenuLateral(),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 120,
-              height: 150,
-              child: Image.asset(
-                "assets/images/obey1.jpg",
-                fit: BoxFit.cover,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
+            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+          ),
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 120,
+                height: 150,
+                child: Image.asset(
+                  "assets/images/obey1.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(width: 10),
-            SizedBox(
-              width: 120, // Ancho fijo
-              height: 170, // Alto fijo
-              child: Image.asset(
-                "assets/images/obey3.jpg",
-                fit: BoxFit.cover,
+              const SizedBox(width: 10),
+              SizedBox(
+                width: 120, // Ancho fijo
+                height: 170, // Alto fijo
+                child: Image.asset(
+                  "assets/images/obey3.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(width: 10),
-            SizedBox(
-              width: 120,
-              height: 150,
-              child: Image.asset(
-                "assets/images/obey2.jpg",
-                fit: BoxFit.cover,
+              const SizedBox(width: 10),
+              SizedBox(
+                width: 120,
+                height: 150,
+                child: Image.asset(
+                  "assets/images/obey2.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -12,19 +12,31 @@ class Seccion1 extends StatelessWidget {
         title: const Text("Sección 1"),
       ),
       drawer: const MenuLateral(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Tomás Ruiz González',
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
+            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Tomás Ruiz González',
                 style: GoogleFonts.anton(
                   textStyle: const TextStyle(fontSize: 24),
-                )),
-            Text('github.com/TommyRG84',
+                ),
+              ),
+              Text(
+                'github.com/TommyRG84',
                 style: GoogleFonts.aBeeZee(
                   textStyle: const TextStyle(fontSize: 24),
-                )),
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

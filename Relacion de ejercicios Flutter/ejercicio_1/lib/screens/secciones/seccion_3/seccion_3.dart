@@ -11,42 +11,50 @@ class Seccion3 extends StatelessWidget {
         title: const Text("Sección 3"),
       ),
       drawer: const MenuLateral(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Imagen 1
-            SizedBox(
-              width: 120, // Ancho fijo
-              height: 150, // Alto fijo
-              child: Image.asset(
-                "assets/images/obey4.jpg",
-                fit: BoxFit.cover,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
+            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Imagen 1
+              SizedBox(
+                width: 120, // Ancho fijo
+                height: 150, // Alto fijo
+                child: Image.asset(
+                  "assets/images/obey4.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(height: 10), // Espacio entre las imágenes
+              const SizedBox(height: 10), // Espacio entre las imágenes
 
-            // Imagen 2
-            SizedBox(
-              width: 120, // Ancho fijo
-              height: 170, // Alto fijo
-              child: Image.asset(
-                "assets/images/obey5.jpg",
-                fit: BoxFit.cover,
+              // Imagen 2
+              SizedBox(
+                width: 120, // Ancho fijo
+                height: 170, // Alto fijo
+                child: Image.asset(
+                  "assets/images/obey5.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(height: 10), // Espacio entre las imágenes
+              const SizedBox(height: 10), // Espacio entre las imágenes
 
-            // Imagen 3
-            SizedBox(
-              width: 120, // Ancho fijo
-              height: 150, // Alto fijo
-              child: Image.asset(
-                "assets/images/obey6.jpg",
-                fit: BoxFit.cover,
+              // Imagen 3
+              SizedBox(
+                width: 120, // Ancho fijo
+                height: 150, // Alto fijo
+                child: Image.asset(
+                  "assets/images/obey6.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

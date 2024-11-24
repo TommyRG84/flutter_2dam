@@ -11,25 +11,33 @@ class Seccion6 extends StatelessWidget {
         title: const Text("Sección 6"),
       ),
       drawer: const MenuLateral(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _filaDeIconos([
-              {'icon': Icons.settings, 'label': 'Ajustes', 'color': Colors.blue},
-            ]),
-            const SizedBox(height: 20),
-            _filaDeIconos([
-              {'icon': Icons.map, 'label': 'Mapa', 'color': Colors.green},
-              {'icon': Icons.notifications, 'label': 'Notificaciones', 'color': Colors.red},
-            ]),
-            const SizedBox(height: 20),
-            _filaDeIconos([
-              {'icon': Icons.camera_alt, 'label': 'Cámara', 'color': Colors.purple},
-              {'icon': Icons.phone, 'label': 'Teléfono', 'color': Colors.orange},
-              {'icon': Icons.email, 'label': 'Correo', 'color': Colors.teal},
-            ]),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen
+            fit: BoxFit.cover, // Ajuste de la imagen para cubrir todo el fondo
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _filaDeIconos([
+                {'icon': Icons.settings, 'label': 'Ajustes', 'color': Colors.blue},
+              ]),
+              const SizedBox(height: 20),
+              _filaDeIconos([
+                {'icon': Icons.map, 'label': 'Mapa', 'color': Colors.green},
+                {'icon': Icons.notifications, 'label': 'Notificaciones', 'color': Colors.red},
+              ]),
+              const SizedBox(height: 20),
+              _filaDeIconos([
+                {'icon': Icons.camera_alt, 'label': 'Cámara', 'color': Colors.purple},
+                {'icon': Icons.phone, 'label': 'Teléfono', 'color': Colors.orange},
+                {'icon': Icons.email, 'label': 'Correo', 'color': Colors.teal},
+              ]),
+            ],
+          ),
         ),
       ),
     );

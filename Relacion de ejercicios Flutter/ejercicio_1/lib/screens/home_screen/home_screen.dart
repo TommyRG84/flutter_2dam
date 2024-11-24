@@ -10,17 +10,26 @@ class PantallaBienvenida extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Bienvenido'),
+      appBar: AppBar(
+        title: const Text('Bienvenido'),
+      ),
+      drawer: const MenuLateral(),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
+            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+          ),
         ),
-        drawer: const MenuLateral(),
-        body: Center(
+        child: Center(
           child: Text(
             'Bienvenido',
             style: GoogleFonts.anton(
               textStyle: const TextStyle(fontSize: 48),
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

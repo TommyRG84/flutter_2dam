@@ -50,21 +50,33 @@ class _MiClase extends State<MiClase> {
         title: Text(widget.title),
       ),
       drawer: const MenuLateral(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Has pulsado...',
-              style: TextStyle(
-                fontSize: 25,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen
+            fit: BoxFit.cover, // Ajuste de la imagen para cubrir todo el fondo
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Has pulsado...',
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Color.fromARGB(
+                      255, 0, 0, 0), // Color de texto blanco para que se vea bien sobre el fondo
+                ),
               ),
-            ),
-            Text(
-              '$_contador',
-              style: const TextStyle(fontSize: 35),
-            ),
-          ],
+              Text(
+                '$_contador',
+                style: const TextStyle(
+                    fontSize: 35,
+                    color: Color.fromARGB(255, 0, 0, 0)), // Asegúrate que el texto sea visible
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: Column(
