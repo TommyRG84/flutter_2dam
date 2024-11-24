@@ -7,8 +7,10 @@ class SeccionInferior extends StatefulWidget {
   SeccionInferiorState createState() => SeccionInferiorState();
 }
 
-class SeccionInferiorState extends State<SeccionInferior> {
-  // Lista de imágenes para cada galería
+class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProviderStateMixin {
+  // Creamos el controlador de las pestañas
+  late TabController _tabController;
+
   final List<String> galeria1 = [
     "assets/images/01.jpg",
     "assets/images/02.jpg",
@@ -39,25 +41,17 @@ class SeccionInferiorState extends State<SeccionInferior> {
     "assets/images/obey12.jpg",
   ];
 
-  // Estado actual de las imágenes mostradas
-  List<String> _imagenesActuales = [];
-
   @override
   void initState() {
     super.initState();
-    _imagenesActuales = galeria1; // Mostrar la galería 1 por defecto
+    // Inicializamos el controlador de las pestañas
+    _tabController = TabController(length: 2, vsync: this);
   }
 
-  void _mostrarGaleria1() {
-    setState(() {
-      _imagenesActuales = galeria1;
-    });
-  }
-
-  void _mostrarGaleria2() {
-    setState(() {
-      _imagenesActuales = galeria2;
-    });
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -70,14 +64,16 @@ class SeccionInferiorState extends State<SeccionInferior> {
             children: [
               IconButton(
                 icon: const Icon(Icons.grid_on),
-                onPressed: _mostrarGaleria1, // Cambia a galería 1
+                onPressed: () {
+                  _tabController.animateTo(0); // Cambia a la galería 1
+                },
               ),
-              const SizedBox(
-                width: 150,
-              ),
+              const SizedBox(width: 150),
               IconButton(
                 icon: const Icon(Icons.assignment_ind),
-                onPressed: _mostrarGaleria2, // Cambia a galería 2
+                onPressed: () {
+                  _tabController.animateTo(1); // Cambia a la galería 2
+                },
               ),
             ],
           ),
@@ -85,14 +81,28 @@ class SeccionInferiorState extends State<SeccionInferior> {
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.35,
-            child: GridView.count(
-              primary: false,
-              crossAxisSpacing: 1,
-              mainAxisSpacing: 1,
-              crossAxisCount: 3,
-              children: _imagenesActuales.map((imagePath) {
-                return contenedorImagen(imagePath);
-              }).toList(),
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                // Galería 1
+                GridView.count(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1,
+                  children: galeria1.map((imagePath) {
+                    return contenedorImagen(imagePath);
+                  }).toList(),
+                ),
+                // Galería 2
+                GridView.count(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1,
+                  children: galeria2.map((imagePath) {
+                    return contenedorImagen(imagePath);
+                  }).toList(),
+                ),
+              ],
             ),
           ),
         ],
