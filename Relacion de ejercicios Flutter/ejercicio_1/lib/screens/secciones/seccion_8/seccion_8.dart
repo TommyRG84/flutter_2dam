@@ -1,4 +1,4 @@
-import 'package:ejercicio_1/screens/drawer/menu_lateral.dart';
+import 'package:ejercicio_1/screens/drawer/drawer.dart';
 import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/elementos_screen.dart';
 import 'package:flutter/material.dart';
 

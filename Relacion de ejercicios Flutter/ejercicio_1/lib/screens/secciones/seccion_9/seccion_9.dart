@@ -1,4 +1,4 @@
-import 'package:ejercicio_1/screens/drawer/menu_lateral.dart';
+import 'package:ejercicio_1/screens/drawer/drawer.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
@@ -95,14 +95,16 @@ class JuegoImagenAleatoria extends State<Seccion9> {
             top: positionY,
             child: GestureDetector(
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('¡Acertaste! +1 Punto'),
-                    duration: Duration(milliseconds: 500),
-                  ),
-                );
                 points++;
                 tapped = true;
+                if (points % 10 == 0) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('¡Has alcanzado $points puntos!'),
+                      duration: const Duration(milliseconds: 1000),
+                    ),
+                  );
+                }
                 setState(() {});
               },
               child: Container(
