@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'seccion_inferior.dart'; // Asegúrate de que este archivo sea el correcto
+import 'seccion_inferior.dart';
 import 'menu_inferior.dart';
 import 'seccion_intermedia.dart';
 import 'seccion_superior.dart';
@@ -23,14 +23,10 @@ class BodyApp extends StatelessWidget {
             children: [SeccionIntermedia()],
           ),
         ),
-        // Aquí integras la Sección Inferior
         Padding(
           padding: EdgeInsets.all(8.0),
           child: Row(
-            children: [
-              Expanded(
-                  child: SeccionInferior()) // Usamos Expanded para que ocupe el espacio restante
-            ],
+            children: [Expanded(child: SeccionInferior())],
           ),
         ),
         Row(

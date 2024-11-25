@@ -56,24 +56,20 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Pestañas con iconos
         TabBar(
           controller: _tabController,
           tabs: const [
-            Tab(icon: Icon(Icons.grid_on)), // Icono para la primera galería
-            Tab(icon: Icon(Icons.assignment_ind)), // Icono para la segunda galería
+            Tab(icon: Icon(Icons.grid_on)),
+            Tab(icon: Icon(Icons.assignment_ind)),
           ],
         ),
-        const SizedBox(height: 10), // Espacio entre la TabBar y el TabBarView
-
-        // Contenido que cambia con las pestañas
+        const SizedBox(height: 10),
         SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.35,
           child: TabBarView(
             controller: _tabController,
             children: [
-              // Primera galería
               GridView.builder(
                 itemCount: galeria1.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -85,7 +81,6 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
                   return contenedorImagen(galeria1[index]);
                 },
               ),
-              // Segunda galería
               GridView.builder(
                 itemCount: galeria2.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -104,7 +99,6 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
     );
   }
 
-  // Método para generar cada contenedor de imagen
   Container contenedorImagen(String imagePath) {
     return Container(
       color: Colors.teal[600],
