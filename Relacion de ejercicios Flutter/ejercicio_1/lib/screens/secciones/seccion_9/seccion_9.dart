@@ -14,7 +14,6 @@ class JuegoImagenAleatoria extends State<Seccion9> {
   int points = 0;
   bool tapped = false;
 
-  // Lista de imágenes disponibles
   final List<String> imagenes = [
     'assets/images/gato1.jpg',
     'assets/images/02.jpg',
@@ -58,14 +57,8 @@ class JuegoImagenAleatoria extends State<Seccion9> {
     double positionX = random.nextDouble() * (screenWidth - 120);
     double maxPositionY = screenHeight * 0.2;
     double positionY = maxPositionY + random.nextDouble() * (screenHeight - maxPositionY - 200);
-
-    // Obtener el brillo actual del tema (claro u oscuro)
     Brightness brightness = Theme.of(context).brightness;
-
-    // Establecer el color del texto según el brillo
     Color textoColor = (brightness == Brightness.dark) ? Colors.white : Colors.black;
-
-    // Seleccionar una imagen aleatoria de la lista
     String imagenAleatoria = imagenes[random.nextInt(imagenes.length)];
 
     return Scaffold(
@@ -75,12 +68,11 @@ class JuegoImagenAleatoria extends State<Seccion9> {
       drawer: const MenuLateral(),
       body: Stack(
         children: [
-          // Imagen de fondo
           Positioned.fill(
             child: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/catsBG.jpg'), // Ruta de la imagen de fondo
+                  image: AssetImage('assets/images/catsBG.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -94,7 +86,7 @@ class JuegoImagenAleatoria extends State<Seccion9> {
               style: TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
-                color: textoColor, // Color dinámico según el brillo del tema
+                color: textoColor,
               ),
             ),
           ),

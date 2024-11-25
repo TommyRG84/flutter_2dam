@@ -1,47 +1,45 @@
 import 'package:flutter/material.dart';
 
-// Colores personalizados de la paleta Evangelion
-const Color evangelionRed = Color(0xFFF23545); // Rojo
-const Color evangelionPurple = Color(0xFF463973); // Púrpura
-const Color evangelionDarkPurple = Color(0xFF382E59); // Púrpura oscuro
-const Color evangelionLightRed = Color(0xFFF23030); // Rojo claro
-const Color evangelionDarkRed = Color(0xFF8C2626); // Rojo oscuro
+const Color evangelionRed = Color(0xFFF23545);
+const Color evangelionPurple = Color(0xFF463973);
+const Color evangelionDarkPurple = Color(0xFF382E59);
+const Color evangelionLightRed = Color(0xFFF23030);
+const Color evangelionDarkRed = Color(0xFF8C2626);
 
-// Tema personalizado con la paleta Evangelion y fuente Onether
 ThemeData customTheme() {
   return ThemeData(
-    primaryColor: evangelionRed, // Rojo como color primario
+    primaryColor: evangelionRed,
     colorScheme: const ColorScheme.light(
-      primary: evangelionRed, // Rojo como color primario
-      secondary: evangelionPurple, // Púrpura como color secundario
+      primary: evangelionRed,
+      secondary: evangelionPurple,
     ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
         color: evangelionDarkRed,
-        fontFamily: 'HelpMe', // Fuente personalizada
+        fontFamily: 'HelpMe',
       ),
       bodyMedium: TextStyle(
         color: evangelionLightRed,
-        fontFamily: 'HelpMe', // Fuente personalizada
+        fontFamily: 'HelpMe',
       ),
       displayLarge: TextStyle(
         color: evangelionPurple,
-        fontFamily: 'HelpMe', // Fuente personalizada
+        fontFamily: 'HelpMe',
         fontSize: 24,
       ),
     ),
     appBarTheme: const AppBarTheme(
-      color: evangelionRed, // Barra de la app con color rojo
-      iconTheme: IconThemeData(color: Colors.white), // Íconos en blanco
+      color: evangelionRed,
+      iconTheme: IconThemeData(color: Colors.white),
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: evangelionPurple, // Botones de color púrpura
-      textTheme: ButtonTextTheme.primary, // Texto de botones en color primario
+      buttonColor: evangelionPurple,
+      textTheme: ButtonTextTheme.primary,
     ),
     drawerTheme: const DrawerThemeData(
-      backgroundColor: evangelionDarkPurple, // Fondo del drawer en púrpura oscuro
+      backgroundColor: evangelionDarkPurple,
     ),
-    scaffoldBackgroundColor: evangelionDarkPurple, // Fondo principal de la app en púrpura oscuro
-    fontFamily: 'HelpMe', // Fuente predeterminada para toda la app
+    scaffoldBackgroundColor: evangelionDarkPurple,
+    fontFamily: 'HelpMe',
   );
 }

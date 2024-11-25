@@ -15,8 +15,8 @@ class Seccion1 extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
-            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+            image: AssetImage('assets/images/androidBG.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(

@@ -14,8 +14,8 @@ class Seccion5 extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
-            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+            image: AssetImage('assets/images/androidBG.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
@@ -37,7 +37,7 @@ class Seccion5 extends StatelessWidget {
               width: 210,
               height: 120,
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 255, 183, 0), //light blue
+                color: Color.fromARGB(255, 255, 183, 0),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40),
                   topRight: Radius.circular(60),

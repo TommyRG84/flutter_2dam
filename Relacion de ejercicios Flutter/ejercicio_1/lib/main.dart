@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ejercicio_1/themes/theme_notifier.dart'; // Importar ThemeNotifier
-import 'package:provider/provider.dart'; // Importar Provider
-import 'package:ejercicio_1/screens/screens.dart'; // Importar las pantallas de la aplicación
+import 'package:ejercicio_1/themes/theme_notifier.dart';
+import 'package:provider/provider.dart';
+import 'package:ejercicio_1/screens/screens.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,12 +19,11 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Relación de ejercicios',
-            theme: themeNotifier.theme, // Usar el tema actual del ThemeNotifier
+            theme: themeNotifier.theme,
             initialRoute: '/',
             routes: {
               '/': (context) => PantallaBienvenida(
                     onThemeChanged: (String theme) {
-                      // Aquí pasas la función que cambiará el tema
                       themeNotifier.setTheme(theme);
                     },
                   ),

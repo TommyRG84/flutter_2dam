@@ -8,7 +8,6 @@ class SeccionInferior extends StatefulWidget {
 }
 
 class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProviderStateMixin {
-  // Creamos el controlador de las pestañas
   late TabController _tabController;
 
   final List<String> galeria1 = [
@@ -44,7 +43,6 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
   @override
   void initState() {
     super.initState();
-    // Inicializamos el controlador de las pestañas
     _tabController = TabController(length: 2, vsync: this);
   }
 
@@ -65,14 +63,14 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
               IconButton(
                 icon: const Icon(Icons.grid_on),
                 onPressed: () {
-                  _tabController.animateTo(0); // Cambia a la galería 1
+                  _tabController.animateTo(0);
                 },
               ),
               const SizedBox(width: 150),
               IconButton(
                 icon: const Icon(Icons.assignment_ind),
                 onPressed: () {
-                  _tabController.animateTo(1); // Cambia a la galería 2
+                  _tabController.animateTo(1);
                 },
               ),
             ],
@@ -84,7 +82,6 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
             child: TabBarView(
               controller: _tabController,
               children: [
-                // Galería 1
                 GridView.count(
                   crossAxisCount: 3,
                   crossAxisSpacing: 1,
@@ -93,7 +90,6 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
                     return contenedorImagen(imagePath);
                   }).toList(),
                 ),
-                // Galería 2
                 GridView.count(
                   crossAxisCount: 3,
                   crossAxisSpacing: 1,

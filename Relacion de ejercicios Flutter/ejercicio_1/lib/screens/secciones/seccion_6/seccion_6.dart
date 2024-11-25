@@ -14,8 +14,8 @@ class Seccion6 extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen
-            fit: BoxFit.cover, // Ajuste de la imagen para cubrir todo el fondo
+            image: AssetImage('assets/images/androidBG.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
@@ -54,7 +54,7 @@ class Seccion6 extends StatelessWidget {
               Icon(
                 elemento['icon'],
                 size: 50,
-                color: elemento['color'] ?? Colors.teal, // Color predeterminado si no se especifica
+                color: elemento['color'] ?? Colors.teal,
               ),
               const SizedBox(height: 5),
               Text(

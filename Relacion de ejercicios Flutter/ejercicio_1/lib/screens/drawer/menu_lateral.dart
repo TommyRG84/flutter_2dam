@@ -2,38 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ejercicio_1/themes/theme_notifier.dart';
 
-// Colores personalizados de la paleta Evangelion
-const Color evangelionRed = Color(0xFFF23545); // Rojo
-const Color evangelionPurple = Color(0xFF463973); // Púrpura
-const Color evangelionDarkPurple = Color(0xFF382E59); // Púrpura oscuro
-const Color evangelionLightRed = Color(0xFFF23030); // Rojo claro
-const Color evangelionDarkRed = Color(0xFF8C2626); // Rojo oscuro
+const Color evangelionRed = Color(0xFFF23545);
+const Color evangelionPurple = Color(0xFF463973);
+const Color evangelionDarkPurple = Color(0xFF382E59);
+const Color evangelionLightRed = Color(0xFFF23030);
+const Color evangelionDarkRed = Color(0xFF8C2626);
 
-// Tema personalizado con la paleta Evangelion
 ThemeData customTheme() {
   return ThemeData(
-    primaryColor: evangelionRed, // Rojo como color primario
+    primaryColor: evangelionRed,
     colorScheme: const ColorScheme.light(
-      primary: evangelionRed, // Rojo como color primario
-      secondary: evangelionPurple, // Púrpura como color secundario
+      primary: evangelionRed,
+      secondary: evangelionPurple,
     ),
     textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: evangelionDarkRed), // Texto con color rojo oscuro
-      bodyMedium: TextStyle(color: evangelionLightRed), // Texto con rojo claro
-      displayLarge: TextStyle(color: evangelionPurple, fontSize: 24), // Títulos en púrpura
+      bodyLarge: TextStyle(color: evangelionDarkRed),
+      bodyMedium: TextStyle(color: evangelionLightRed),
+      displayLarge: TextStyle(color: evangelionPurple, fontSize: 24),
     ),
     appBarTheme: const AppBarTheme(
-      color: evangelionRed, // Barra de la app con color rojo
-      iconTheme: IconThemeData(color: Colors.white), // Íconos en blanco
+      color: evangelionRed,
+      iconTheme: IconThemeData(color: Colors.white),
     ),
     buttonTheme: const ButtonThemeData(
-      buttonColor: evangelionPurple, // Botones de color púrpura
-      textTheme: ButtonTextTheme.primary, // Texto de botones en color primario
+      buttonColor: evangelionPurple,
+      textTheme: ButtonTextTheme.primary,
     ),
     drawerTheme: const DrawerThemeData(
-      backgroundColor: evangelionDarkPurple, // Fondo del drawer en púrpura oscuro
+      backgroundColor: evangelionDarkPurple,
     ),
-    scaffoldBackgroundColor: evangelionDarkPurple, // Fondo principal de la app en púrpura oscuro
+    scaffoldBackgroundColor: evangelionDarkPurple,
   );
 }
 
@@ -75,15 +73,14 @@ class MenuLateral extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style:
-            Theme.of(context).textTheme.bodyLarge, // Cambiar el color dinámicamente según el tema
+        style: Theme.of(context).textTheme.bodyLarge,
       ),
       onTap: () {
         Navigator.pop(context);
         if (route != null) {
           Navigator.pushNamed(context, route);
         } else {
-          _showThemeDialog(context); // Mostrar diálogo para elegir tema
+          _showThemeDialog(context);
         }
       },
     );
@@ -102,21 +99,21 @@ class MenuLateral extends StatelessWidget {
                 title: const Text("Claro"),
                 onTap: () {
                   Provider.of<ThemeNotifier>(context, listen: false).setTheme('Claro');
-                  Navigator.pop(context); // Cierra el diálogo
+                  Navigator.pop(context);
                 },
               ),
               ListTile(
                 title: const Text("Oscuro"),
                 onTap: () {
                   Provider.of<ThemeNotifier>(context, listen: false).setTheme('Oscuro');
-                  Navigator.pop(context); // Cierra el diálogo
+                  Navigator.pop(context);
                 },
               ),
               ListTile(
                 title: const Text("Personalizado"),
                 onTap: () {
                   Provider.of<ThemeNotifier>(context, listen: false).setTheme('Personalizado');
-                  Navigator.pop(context); // Cierra el diálogo
+                  Navigator.pop(context);
                 },
               ),
             ],

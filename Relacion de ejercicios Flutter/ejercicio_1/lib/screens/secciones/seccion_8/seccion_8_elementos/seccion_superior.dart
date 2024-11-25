@@ -16,8 +16,8 @@ class SeccionSuperior extends StatelessWidget {
                 children: [
                   ClipOval(
                     child: SizedBox(
-                      width: 75, // Ancho fijo
-                      height: 75, // Alto fijo
+                      width: 75,
+                      height: 75,
                       child: Image.asset(
                         "assets/images/gato1.jpg",
                         fit: BoxFit.cover,

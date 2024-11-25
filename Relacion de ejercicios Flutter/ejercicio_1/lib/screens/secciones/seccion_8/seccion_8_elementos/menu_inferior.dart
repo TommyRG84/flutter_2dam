@@ -21,8 +21,8 @@ class MenuInferior extends StatelessWidget {
             const SizedBox(width: 40),
             ClipOval(
               child: SizedBox(
-                width: 22, // Ancho fijo
-                height: 22, // Alto fijo
+                width: 22,
+                height: 22,
                 child: Image.asset(
                   "assets/images/gato1.jpg",
                   fit: BoxFit.cover,

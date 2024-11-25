@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PantallaBienvenida extends StatelessWidget {
-  final Function(String) onThemeChanged; // Callback para cambiar el tema
+  final Function(String) onThemeChanged;
 
   const PantallaBienvenida({super.key, required this.onThemeChanged});
 
@@ -17,8 +17,8 @@ class PantallaBienvenida extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
-            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+            image: AssetImage('assets/images/androidBG.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(

@@ -14,8 +14,8 @@ class Seccion2 extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
-            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+            image: AssetImage('assets/images/androidBG.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
@@ -32,8 +32,8 @@ class Seccion2 extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               SizedBox(
-                width: 120, // Ancho fijo
-                height: 170, // Alto fijo
+                width: 120,
+                height: 170,
                 child: Image.asset(
                   "assets/images/obey3.jpg",
                   fit: BoxFit.cover,

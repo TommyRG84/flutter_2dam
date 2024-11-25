@@ -14,40 +14,35 @@ class Seccion3 extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen de fondo
-            fit: BoxFit.cover, // Ajuste para cubrir toda la pantalla
+            image: AssetImage('assets/images/androidBG.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Imagen 1
               SizedBox(
-                width: 120, // Ancho fijo
-                height: 150, // Alto fijo
+                width: 120,
+                height: 150,
                 child: Image.asset(
                   "assets/images/obey4.jpg",
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 10), // Espacio entre las imágenes
-
-              // Imagen 2
+              const SizedBox(height: 10),
               SizedBox(
-                width: 120, // Ancho fijo
-                height: 170, // Alto fijo
+                width: 120,
+                height: 170,
                 child: Image.asset(
                   "assets/images/obey5.jpg",
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 10), // Espacio entre las imágenes
-
-              // Imagen 3
+              const SizedBox(height: 10),
               SizedBox(
-                width: 120, // Ancho fijo
-                height: 150, // Alto fijo
+                width: 120,
+                height: 150,
                 child: Image.asset(
                   "assets/images/obey6.jpg",
                   fit: BoxFit.cover,

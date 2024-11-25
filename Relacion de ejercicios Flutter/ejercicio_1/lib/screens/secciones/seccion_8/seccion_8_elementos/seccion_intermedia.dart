@@ -56,18 +56,18 @@ Widget _imagenRedondeada(String imagePath, String label) {
     children: [
       ClipOval(
         child: SizedBox(
-          width: 50, // Ancho fijo
-          height: 50, // Alto fijo
+          width: 50,
+          height: 50,
           child: Image.asset(
             imagePath,
             fit: BoxFit.cover,
           ),
         ),
       ),
-      const SizedBox(height: 4), // Espacio entre la imagen y el texto
+      const SizedBox(height: 4),
       Text(
         label,
-        style: const TextStyle(fontSize: 12), // Tamaño del texto
+        style: const TextStyle(fontSize: 12),
       ),
     ],
   );

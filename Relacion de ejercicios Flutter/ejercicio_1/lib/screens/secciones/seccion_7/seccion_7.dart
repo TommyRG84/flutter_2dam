@@ -53,8 +53,8 @@ class _MiClase extends State<MiClase> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/androidBG.jpg'), // Ruta de la imagen
-            fit: BoxFit.cover, // Ajuste de la imagen para cubrir todo el fondo
+            image: AssetImage('assets/images/androidBG.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
@@ -65,15 +65,12 @@ class _MiClase extends State<MiClase> {
                 'Has pulsado...',
                 style: TextStyle(
                   fontSize: 25,
-                  color: Color.fromARGB(
-                      255, 0, 0, 0), // Color de texto blanco para que se vea bien sobre el fondo
+                  color: Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
               Text(
                 '$_contador',
-                style: const TextStyle(
-                    fontSize: 35,
-                    color: Color.fromARGB(255, 0, 0, 0)), // Asegúrate que el texto sea visible
+                style: const TextStyle(fontSize: 35, color: Color.fromARGB(255, 0, 0, 0)),
               ),
             ],
           ),
