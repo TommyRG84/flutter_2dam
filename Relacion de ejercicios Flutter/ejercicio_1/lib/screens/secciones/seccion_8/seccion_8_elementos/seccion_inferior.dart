@@ -54,58 +54,57 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      children: [
+        // Pestañas con iconos
+        TabBar(
+          controller: _tabController,
+          tabs: const [
+            Tab(icon: Icon(Icons.grid_on)), // Icono para la primera galería
+            Tab(icon: Icon(Icons.assignment_ind)), // Icono para la segunda galería
+          ],
+        ),
+        const SizedBox(height: 10), // Espacio entre la TabBar y el TabBarView
+
+        // Contenido que cambia con las pestañas
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.35,
+          child: TabBarView(
+            controller: _tabController,
             children: [
-              IconButton(
-                icon: const Icon(Icons.grid_on),
-                onPressed: () {
-                  _tabController.animateTo(0);
+              // Primera galería
+              GridView.builder(
+                itemCount: galeria1.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1,
+                ),
+                itemBuilder: (context, index) {
+                  return contenedorImagen(galeria1[index]);
                 },
               ),
-              const SizedBox(width: 150),
-              IconButton(
-                icon: const Icon(Icons.assignment_ind),
-                onPressed: () {
-                  _tabController.animateTo(1);
+              // Segunda galería
+              GridView.builder(
+                itemCount: galeria2.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1,
+                ),
+                itemBuilder: (context, index) {
+                  return contenedorImagen(galeria2[index]);
                 },
               ),
             ],
           ),
-          const SizedBox(height: 5),
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.35,
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                GridView.count(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 1,
-                  mainAxisSpacing: 1,
-                  children: galeria1.map((imagePath) {
-                    return contenedorImagen(imagePath);
-                  }).toList(),
-                ),
-                GridView.count(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 1,
-                  mainAxisSpacing: 1,
-                  children: galeria2.map((imagePath) {
-                    return contenedorImagen(imagePath);
-                  }).toList(),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
+  // Método para generar cada contenedor de imagen
   Container contenedorImagen(String imagePath) {
     return Container(
       color: Colors.teal[600],

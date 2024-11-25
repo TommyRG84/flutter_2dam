@@ -1,8 +1,8 @@
-import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/menu_inferior.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/seccion_inferior.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/seccion_intermedia.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8_elementos/seccion_superior.dart';
 import 'package:flutter/material.dart';
+import 'seccion_inferior.dart'; // Asegúrate de que este archivo sea el correcto
+import 'menu_inferior.dart';
+import 'seccion_intermedia.dart';
+import 'seccion_superior.dart';
 
 class BodyApp extends StatelessWidget {
   const BodyApp({super.key});
@@ -23,12 +23,19 @@ class BodyApp extends StatelessWidget {
             children: [SeccionIntermedia()],
           ),
         ),
-        Row(
-          children: [SeccionInferior()],
+        // Aquí integras la Sección Inferior
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Expanded(
+                  child: SeccionInferior()) // Usamos Expanded para que ocupe el espacio restante
+            ],
+          ),
         ),
         Row(
           children: [MenuInferior()],
-        )
+        ),
       ],
     );
   }

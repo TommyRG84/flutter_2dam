@@ -26,7 +26,7 @@ class SeccionIntermedia extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           SizedBox(
-            height: 100,
+            height: 71,
             width: MediaQuery.of(context).size.width * 0.8,
             child: Center(
               child: ListView(

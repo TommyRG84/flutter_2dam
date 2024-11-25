@@ -87,6 +87,14 @@ class JuegoImagenAleatoria extends State<Seccion9> {
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
                 color: textoColor,
+                shadows: [
+                  Shadow(
+                    blurRadius: 10.0,
+                    color:
+                        Colors.black.withOpacity(0.7), // Sombra oscura para mejorar la visibilidad
+                    offset: const Offset(2, 2),
+                  ),
+                ],
               ),
             ),
           ),

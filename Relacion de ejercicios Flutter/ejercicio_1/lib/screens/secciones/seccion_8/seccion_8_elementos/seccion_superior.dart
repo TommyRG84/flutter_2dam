@@ -6,7 +6,7 @@ class SeccionSuperior extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(2.0),
+      padding: const EdgeInsets.all(1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,7 +27,7 @@ class SeccionSuperior extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 12,
+                width: 9,
               ),
               const Column(
                 children: [
@@ -45,7 +45,7 @@ class SeccionSuperior extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 12,
+                width: 10,
               ),
               const Column(
                 children: [
@@ -63,7 +63,7 @@ class SeccionSuperior extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 12,
+                width: 10,
               ),
               const Column(
                 children: [
