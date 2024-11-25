@@ -1,39 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ejercicio_1/themes/theme_notifier.dart';
-
-const Color evangelionRed = Color(0xFFF23545);
-const Color evangelionPurple = Color(0xFF463973);
-const Color evangelionDarkPurple = Color(0xFF382E59);
-const Color evangelionLightRed = Color(0xFFF23030);
-const Color evangelionDarkRed = Color(0xFF8C2626);
-
-ThemeData customTheme() {
-  return ThemeData(
-    primaryColor: evangelionRed,
-    colorScheme: const ColorScheme.light(
-      primary: evangelionRed,
-      secondary: evangelionPurple,
-    ),
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: evangelionDarkRed),
-      bodyMedium: TextStyle(color: evangelionLightRed),
-      displayLarge: TextStyle(color: evangelionPurple, fontSize: 24),
-    ),
-    appBarTheme: const AppBarTheme(
-      color: evangelionRed,
-      iconTheme: IconThemeData(color: Colors.white),
-    ),
-    buttonTheme: const ButtonThemeData(
-      buttonColor: evangelionPurple,
-      textTheme: ButtonTextTheme.primary,
-    ),
-    drawerTheme: const DrawerThemeData(
-      backgroundColor: evangelionDarkPurple,
-    ),
-    scaffoldBackgroundColor: evangelionDarkPurple,
-  );
-}
+import 'package:ejercicio_1/routes/app_routes.dart';
 
 class MenuLateral extends StatelessWidget {
   const MenuLateral({super.key});
@@ -55,15 +23,15 @@ class MenuLateral extends StatelessWidget {
             child: null,
           ),
           _buildMenuItem(context, title: "Cambiar Tema", route: null),
-          _buildMenuItem(context, title: "Sección 1", route: '/seccion1'),
-          _buildMenuItem(context, title: "Sección 2", route: '/seccion2'),
-          _buildMenuItem(context, title: "Sección 3", route: '/seccion3'),
-          _buildMenuItem(context, title: "Sección 4", route: '/seccion4'),
-          _buildMenuItem(context, title: "Sección 5", route: '/seccion5'),
-          _buildMenuItem(context, title: "Sección 6", route: '/seccion6'),
-          _buildMenuItem(context, title: "Sección 7", route: '/seccion7'),
-          _buildMenuItem(context, title: "Sección 8", route: '/seccion8'),
-          _buildMenuItem(context, title: "Sección 9", route: '/seccion9'),
+          _buildMenuItem(context, title: "Sección 1", route: AppRoutes.seccion1),
+          _buildMenuItem(context, title: "Sección 2", route: AppRoutes.seccion2),
+          _buildMenuItem(context, title: "Sección 3", route: AppRoutes.seccion3),
+          _buildMenuItem(context, title: "Sección 4", route: AppRoutes.seccion4),
+          _buildMenuItem(context, title: "Sección 5", route: AppRoutes.seccion5),
+          _buildMenuItem(context, title: "Sección 6", route: AppRoutes.seccion6),
+          _buildMenuItem(context, title: "Sección 7", route: AppRoutes.seccion7),
+          _buildMenuItem(context, title: "Sección 8", route: AppRoutes.seccion8),
+          _buildMenuItem(context, title: "Sección 9", route: AppRoutes.seccion9),
         ],
       ),
     );
