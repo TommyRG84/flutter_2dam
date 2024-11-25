@@ -58,15 +58,15 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
       children: [
         TabBar(
           controller: _tabController,
+          indicatorWeight: 2,
           tabs: const [
             Tab(icon: Icon(Icons.grid_on)),
             Tab(icon: Icon(Icons.assignment_ind)),
           ],
         ),
-        const SizedBox(height: 10),
         SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.35,
+          height: MediaQuery.of(context).size.height * 0.40,
           child: TabBarView(
             controller: _tabController,
             children: [
