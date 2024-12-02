@@ -66,7 +66,7 @@ class SeccionInferiorState extends State<SeccionInferior> with SingleTickerProvi
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.40,
+          height: MediaQuery.of(context).size.height * 0.35,
           child: TabBarView(
             controller: _tabController,
             children: [

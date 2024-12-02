@@ -12,7 +12,7 @@ class SeccionIntermedia extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: 395,
+                width: MediaQuery.of(context).size.width * 0.95,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -33,13 +33,13 @@ class SeccionIntermedia extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: [
                   _imagenRedondeada("assets/images/add.png", "Añadir"),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 15),
                   _imagenRedondeada("assets/images/01.jpg", "Gatico"),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 15),
                   _imagenRedondeada("assets/images/02.jpg", "Gatete"),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 15),
                   _imagenRedondeada("assets/images/03.jpg", "Gatillo"),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 15),
                   _imagenRedondeada("assets/images/04.jpg", "Gato"),
                 ],
               ),
