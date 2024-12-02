@@ -23,7 +23,7 @@ flutter:
   fonts:
     - family: HelpMe
       fonts:
-        - asset: assets/fonts/Garet-Heavy.ttf
+        - asset: assets/fonts/HelpMe.ttf
           weight: 700
     - family: Anton
       fonts:

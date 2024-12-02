@@ -26,8 +26,8 @@ class SeccionSuperior extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                width: 9,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.025,
               ),
               const Column(
                 children: [
@@ -44,8 +44,8 @@ class SeccionSuperior extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(
-                width: 10,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.025,
               ),
               const Column(
                 children: [
@@ -62,8 +62,8 @@ class SeccionSuperior extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(
-                width: 10,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.025,
               ),
               const Column(
                 children: [
