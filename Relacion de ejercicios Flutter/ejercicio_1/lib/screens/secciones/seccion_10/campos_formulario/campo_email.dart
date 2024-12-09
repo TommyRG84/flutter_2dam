@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class CampoEmail extends StatelessWidget {
   final TextEditingController controller;
+  final InputDecoration campoEstilo;
 
-  const CampoEmail({super.key, required this.controller});
+  const CampoEmail({super.key, required this.controller, required this.campoEstilo});
 
   String? _validarCorreo(String? value) {
     if (value == null || value.isEmpty) {
@@ -11,7 +12,9 @@ class CampoEmail extends StatelessWidget {
     }
     final regex = RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
     if (!regex.hasMatch(value)) {
-      return 'Por favor, introduce un correo electrónico válido';
+      return 'El correo electrónico debe cumplir las siguientes condiciones:\n'
+          '- No puede estar vacío\n'
+          '- Debe tener un formato válido (ejemplo: usuario@dominio.com)';
     }
     return null;
   }
@@ -20,14 +23,12 @@ class CampoEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      decoration: const InputDecoration(
-        labelText: 'Correo Electrónico',
-        hintText: 'ejemplo@dominio.com',
-        prefixIcon: Icon(Icons.email),
-        border: OutlineInputBorder(),
-      ),
+      decoration: campoEstilo.copyWith(
+          labelText: 'Correo Electrónico',
+          hintText: 'ejemplo@dominio.com',
+          prefixIcon: const Icon(Icons.email)),
       validator: _validarCorreo,
-      keyboardType: TextInputType.emailAddress, // Muestra el teclado adecuado
+      keyboardType: TextInputType.emailAddress,
     );
   }
 }

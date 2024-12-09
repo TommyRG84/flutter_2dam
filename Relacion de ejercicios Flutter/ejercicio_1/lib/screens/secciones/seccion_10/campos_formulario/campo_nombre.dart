@@ -2,16 +2,21 @@ import 'package:flutter/material.dart';
 
 class CampoNombre extends StatelessWidget {
   final TextEditingController controller;
+  final InputDecoration campoEstilo;
 
-  const CampoNombre({super.key, required this.controller});
+  const CampoNombre({super.key, required this.controller, required this.campoEstilo});
 
   String? _validarNombre(String? value) {
     if (value == null || value.isEmpty) {
       return 'Este campo no puede estar vacío';
     }
-    final regex = RegExp(r'^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$');
-    if (!regex.hasMatch(value)) {
-      return 'Solo se permiten letras, acentos y espacios';
+    final regex = RegExp(r'^([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)*){1,30}$');
+    if (!regex.hasMatch(value) || value.length > 30) {
+      return 'El nombre debe cumplir las siguientes condiciones:\n'
+          '- No puede estar vacío\n'
+          '- Cada palabra debe iniciar con mayúscula\n'
+          '- Solo se permiten letras\n'
+          '- Máximo 30 caracteres';
     }
     return null;
   }
@@ -20,11 +25,10 @@ class CampoNombre extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      decoration: const InputDecoration(
+      decoration: campoEstilo.copyWith(
         labelText: 'Nombre',
         hintText: 'Ingresa tu nombre',
-        prefixIcon: Icon(Icons.person),
-        border: OutlineInputBorder(),
+        prefixIcon: const Icon(Icons.person),
       ),
       validator: _validarNombre,
       keyboardType: TextInputType.text,

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class CampoPassword extends StatefulWidget {
   final TextEditingController controller;
+  final InputDecoration campoEstilo;
 
-  const CampoPassword({super.key, required this.controller});
+  const CampoPassword({super.key, required this.controller, required this.campoEstilo});
 
   @override
   CampoPasswordState createState() => CampoPasswordState();
@@ -28,12 +29,10 @@ class CampoPasswordState extends State<CampoPassword> {
     return TextFormField(
       controller: widget.controller,
       obscureText: true,
-      decoration: const InputDecoration(
-        labelText: 'Contraseña',
-        hintText: 'Ingresa tu contraseña',
-        prefixIcon: Icon(Icons.lock),
-        border: OutlineInputBorder(),
-      ),
+      decoration: widget.campoEstilo.copyWith(
+          labelText: 'Contraseña',
+          hintText: 'Ingresa tu contraseña',
+          prefixIcon: const Icon(Icons.lock)),
       validator: _validarPassword,
       keyboardType: TextInputType.visiblePassword,
     );
