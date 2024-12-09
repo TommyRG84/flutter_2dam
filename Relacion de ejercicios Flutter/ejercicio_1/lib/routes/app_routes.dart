@@ -13,6 +13,7 @@ class AppRoutes {
   static const seccion7 = '/seccion7';
   static const seccion8 = '/seccion8';
   static const seccion9 = '/seccion9';
+  static const seccion10 = '/seccion10';
 
   // Rutas y widgets asociados
   static Map<String, Widget Function(BuildContext)> getRoutes(Function(String) onThemeChanged) {

@@ -32,6 +32,7 @@ class MenuLateral extends StatelessWidget {
           _buildMenuItem(context, title: "Sección 7", route: AppRoutes.seccion7),
           _buildMenuItem(context, title: "Sección 8", route: AppRoutes.seccion8),
           _buildMenuItem(context, title: "Sección 9", route: AppRoutes.seccion9),
+          _buildMenuItem(context, title: "Sección 10", route: AppRoutes.seccion10),
         ],
       ),
     );

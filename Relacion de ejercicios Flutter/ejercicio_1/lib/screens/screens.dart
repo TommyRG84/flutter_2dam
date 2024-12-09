@@ -8,3 +8,4 @@ export 'package:ejercicio_1/screens/secciones/seccion_6/seccion_6.dart';
 export 'package:ejercicio_1/screens/secciones/seccion_7/seccion_7.dart';
 export 'package:ejercicio_1/screens/secciones/seccion_8/seccion_8.dart';
 export 'package:ejercicio_1/screens/secciones/seccion_9/seccion_9.dart';
+export 'package:ejercicio_1/screens/secciones/seccion_10/seccion_10.dart';
