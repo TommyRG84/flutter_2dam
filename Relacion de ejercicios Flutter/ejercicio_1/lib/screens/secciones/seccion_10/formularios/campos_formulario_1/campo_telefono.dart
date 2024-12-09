@@ -10,7 +10,7 @@ class CampoTelefono extends StatelessWidget {
     if (value == null || value.isEmpty) {
       return 'Este campo no puede estar vacío';
     }
-    final regex = RegExp(r'^\+?[0-9]{10,15}$'); // Validación simple para números de teléfono
+    final regex = RegExp(r'^\+?[0-9]{10,15}$');
     if (!regex.hasMatch(value)) {
       return 'Número de teléfono no válido';
     }

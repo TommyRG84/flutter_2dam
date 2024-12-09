@@ -4,14 +4,14 @@ class CampoDesplegable extends StatelessWidget {
   final String? selectedOption;
   final ValueChanged<String?> onChanged;
   final List<String> options;
-  final InputDecoration campoEstilo; // Agregamos el parámetro campoEstilo
+  final InputDecoration campoEstilo;
 
   const CampoDesplegable({
     super.key,
     required this.selectedOption,
     required this.onChanged,
     required this.options,
-    required this.campoEstilo, // Lo requerimos en el constructor
+    required this.campoEstilo,
   });
 
   String? _validarSeleccion(String? value) {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CampoFecha extends StatelessWidget {
   final TextEditingController controller;
   final InputDecoration campoEstilo;
-  final String? Function(String?)? validator; // Agregar un validador personalizado
+  final String? Function(String?)? validator;
 
   const CampoFecha(
       {super.key, required this.controller, required this.campoEstilo, this.validator});
@@ -17,7 +17,7 @@ class CampoFecha extends StatelessWidget {
         hintText: 'Selecciona tu fecha de nacimiento',
         prefixIcon: const Icon(Icons.calendar_today),
       ),
-      readOnly: true, // Para que el usuario no escriba directamente
+      readOnly: true,
       onTap: () async {
         DateTime? pickedDate = await showDatePicker(
           context: context,
@@ -26,10 +26,10 @@ class CampoFecha extends StatelessWidget {
           lastDate: DateTime.now(),
         );
         if (pickedDate != null) {
-          controller.text = "${pickedDate.toLocal()}".split(' ')[0]; // Asigna la fecha seleccionada
+          controller.text = "${pickedDate.toLocal()}".split(' ')[0];
         }
       },
-      validator: validator, // Usamos el validador para comprobar si la fecha es válida
+      validator: validator,
     );
   }
 }
