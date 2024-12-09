@@ -1,10 +1,12 @@
-import 'package:ejercicio_1/screens/secciones/seccion_10/campos_formulario/campo_apellidos.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_10/campos_formulario/campo_direccion.dart';
 import 'package:flutter/material.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_10/campos_formulario/campo_email.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_10/campos_formulario/campo_nombre.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_10/campos_formulario/campo_password.dart';
-import 'package:ejercicio_1/screens/secciones/seccion_10/campos_formulario/campo_desplegable.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_apellidos.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_direccion.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_fecha.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_telefono.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_email.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_nombre.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_password.dart';
+import 'package:ejercicio_1/screens/secciones/seccion_10/formularios/campos_formulario_1/campo_desplegable.dart';
 import 'package:ejercicio_1/screens/drawer/drawer.dart';
 
 class Seccion10 extends StatefulWidget {
@@ -17,15 +19,15 @@ class Seccion10 extends StatefulWidget {
 class Formulario extends State<Seccion10> {
   final _formKey = GlobalKey<FormState>();
   final _nombreController = TextEditingController();
-  final _apellidosController = TextEditingController(); // Controlador para Apellidos
-  final _direccionController = TextEditingController(); // Controlador para Dirección
+  final _apellidosController = TextEditingController();
+  final _direccionController = TextEditingController();
   final _correoController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _fechaController = TextEditingController();
+  final _telefonoController = TextEditingController();
 
-  // Variable para el valor seleccionado en el Dropdown
   String? _selectedOption;
 
-  // Opciones del Dropdown
   final List<String> _options = ['Masculino', 'Femenino', 'Otro'];
 
   final InputDecoration _campoEstilo = InputDecoration(
@@ -36,6 +38,13 @@ class Formulario extends State<Seccion10> {
     ),
     contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
   );
+
+  String? _validarFecha(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Por favor selecciona una fecha de nacimiento';
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,27 +60,16 @@ class Formulario extends State<Seccion10> {
             key: _formKey,
             child: Column(
               children: [
-                // Campo de Nombre
                 CampoNombre(controller: _nombreController, campoEstilo: _campoEstilo),
                 const SizedBox(height: 20),
-
-                // Campo de Apellidos
                 CampoApellidos(controller: _apellidosController, campoEstilo: _campoEstilo),
                 const SizedBox(height: 20),
-
-                // Campo de Dirección
                 CampoDireccion(controller: _direccionController, campoEstilo: _campoEstilo),
                 const SizedBox(height: 20),
-
-                // Campo de Correo Electrónico
                 CampoEmail(controller: _correoController, campoEstilo: _campoEstilo),
                 const SizedBox(height: 20),
-
-                // Campo de Contraseña
                 CampoPassword(controller: _passwordController, campoEstilo: _campoEstilo),
                 const SizedBox(height: 20),
-
-                // Campo Desplegable de Género
                 CampoDesplegable(
                   selectedOption: _selectedOption,
                   onChanged: (newValue) {
@@ -83,7 +81,14 @@ class Formulario extends State<Seccion10> {
                   campoEstilo: _campoEstilo,
                 ),
                 const SizedBox(height: 20),
-
+                CampoFecha(
+                  controller: _fechaController,
+                  campoEstilo: _campoEstilo,
+                  validator: _validarFecha,
+                ),
+                const SizedBox(height: 20),
+                CampoTelefono(controller: _telefonoController, campoEstilo: _campoEstilo),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {

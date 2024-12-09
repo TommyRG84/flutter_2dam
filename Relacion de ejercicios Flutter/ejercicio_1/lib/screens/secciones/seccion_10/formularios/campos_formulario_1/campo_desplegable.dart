@@ -28,8 +28,7 @@ class CampoDesplegable extends StatelessWidget {
       onChanged: onChanged,
       validator: _validarSeleccion,
       decoration: campoEstilo.copyWith(
-        // Usamos copyWith para agregar el labelText y hintText
-        labelText: 'Género', // Título del campo
+        labelText: 'Género',
         hintText: 'Seleccione una opción',
         prefixIcon: const Icon(Icons.transgender),
       ),
