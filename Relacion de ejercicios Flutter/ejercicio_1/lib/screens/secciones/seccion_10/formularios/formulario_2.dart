@@ -20,8 +20,8 @@ class Formulario2State extends State<Formulario2> {
   int _numeroIngresado = 0;
 
   final InputDecoration _campoEstilo = InputDecoration(
-    labelText: 'Introduce aquí un número',
-    hintText: 'Intenta adivinar el ganador',
+    labelText: 'Introduce aquí un número (Tiene que ser entre 1 y 100)',
+    hintText: 'Intenta adivinar el ganador (Entre 1 y 100)',
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(15.0),
     ),
