@@ -29,10 +29,11 @@ class Seccion1 extends StatelessWidget {
                   textStyle: const TextStyle(fontSize: 24),
                 ),
               ),
-              Text(
+              const Text(
                 'github.com/TommyRG84',
-                style: GoogleFonts.aBeeZee(
-                  textStyle: const TextStyle(fontSize: 24),
+                style: TextStyle(
+                  fontFamily: 'ABeeZee',
+                  fontSize: 24,
                 ),
               ),
             ],
